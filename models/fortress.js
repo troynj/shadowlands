@@ -10,10 +10,20 @@ User.init(
       allowNull: false,
       unique: true,
     },
- progress: {
-  type: DataTypes.INTEGER,
-  allowNull: false,
- }
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    roster_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      unique: true,
+    },
+    main_monster_id: {
+      type:DataType.INTEGER,
+    }
+
   },
   {
     sequelize,
