@@ -64,8 +64,22 @@
   {
     "name": "Epislon Resolution",
     "email": "epislon@resolution.com",
-    "password": "omega",
+    "password": "epislon",
     "progress": 0,
     "location_id": 4
+  },
+  {
+    "name": "repislon Otis",
+    "email": "islon@restion.com",
+    "password": "epin",
+    "progress": 1,
+    "location_id": 2
+  },
+  {
+    "name": "gernzle lusomn",
+    "email": "opislon@riopion.com",
+    "password": "epjkin",
+    "progress": 0,
+    "location_id": 1
   }
 ]
