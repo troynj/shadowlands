@@ -9,16 +9,6 @@ Player.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
     progress: {
       type: DataTypes.INTEGER,
     },
@@ -26,13 +16,20 @@ Player.init(
       type: DataTypes.INTEGER,
       references: {
         model: "location",
-        key: 'id'
-      }
-    }
+        key: "id",
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: "player",

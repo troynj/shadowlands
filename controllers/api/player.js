@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Captured, Location, Player, Prototype, Wild } = require("../../models");
+const { Captured, Location, Player, Prototype, User, Wild } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   console.log(req.params.id);
@@ -20,9 +19,7 @@ router.get("/:id", async (req, res) => {
     const playerArr = await Player.findByPk(id);
     console.log(playerArr);
     if (!playerArr) {
-      res
-        .status(404)
-        .json({ message: "No player was found with that id!" });
+      res.status(404).json({ message: "No player was found with that id!" });
       return;
     }
 
@@ -48,9 +45,7 @@ router.put("/:id", async (req, res) => {
     const [updated] = await Player.update(req.body, { where: { id } });
 
     if (!updated) {
-      return res
-        .status(404)
-        .json({ message: "No player found with that ID" });
+      return res.status(404).json({ message: "No player found with that ID" });
     }
 
     const updatedPlayer = await Player.findByPk(id);
@@ -73,7 +68,7 @@ router.delete("/:id", async (req, res) => {
 
     // const updatedPlayer = await Player.findAll();
     // return res.status(200).json(updatedPlayer);
-    
+
     // Return a success message in the response
     return res.status(200).json({ message: "Player deleted successfully" });
   } catch (err) {

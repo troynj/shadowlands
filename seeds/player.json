@@ -1,85 +1,73 @@
 [
   {
     "name": "Delta compression",
-    "email": "seed@seed.com",
-    "password": "seed",
-    "location_id": 1
+    "location_id": 1,
+    "user_id": 1
   },
   {
     "name": "Beta Sampling",
-    "email": "beta@sampling.com",
-    "password": "beta",
     "progress": 2,
-    "location_id": 2
+    "location_id": 2,
+    "user_id": 2
   },
   {
     "name": "Theta Codec",
-    "email": "theta@codec.com",
-    "password": "theta",
     "progress": 1,
-    "location_id": 2
+    "location_id": 2,
+    "user_id": 3
   },
   {
     "name": "Alpha Bitdepth",
-    "email": "alpha@bitdepth.com",
-    "password": "alpha",
     "progress": 0,
-    "location_id": 2
+    "location_id": 2,
+    "user_id": 4
   },
   {
     "name": "Zeta Bitstream",
-    "email": "zeta@bitstream.com",
-    "password": "zeta",
     "progress": 0,
-    "location_id": 3
+    "location_id": 3,
+    "user_id": 5
   },
   {
     "name": "Kappa Encoding",
-    "email": "kappa@encoding.com",
-    "password": "kappa",
     "progress": 1,
-    "location_id": 3
+    "location_id": 3,
+    "user_id": 1
   },
   {
     "name": "Lambda Decoding",
-    "email": "lambda@decoding.com",
-    "password": "lambda",
     "progress": 2,
-    "location_id": 3
+    "location_id": 3,
+    "user_id": 2
   },
   {
     "name": "Sigma Streaming",
-    "email": "sigma@streaming.com",
-    "password": "sigma",
     "progress": 2,
-    "location_id": 4
+    "location_id": 4,
+    "user_id": 3
   },
   {
     "name": "Omega Compression",
-    "email": "omega@compression.com",
-    "password": "omega",
     "progress": 1,
-    "location_id": 4
+    "location_id": 4,
+    "user_id": 4
   },
   {
     "name": "Epislon Resolution",
-    "email": "epislon@resolution.com",
-    "password": "epislon",
     "progress": 0,
-    "location_id": 4
+    "location_id": 4,
+    "user_id": 5
   },
   {
     "name": "repislon Otis",
-    "email": "islon@restion.com",
-    "password": "epin",
     "progress": 1,
-    "location_id": 2
+    "location_id": 2,
+    "user_id": 1
   },
   {
     "name": "gernzle lusomn",
-    "email": "opislon@riopion.com",
-    "password": "epjkin",
     "progress": 0,
-    "location_id": 1
+    "location_id": 1,
+    "user_id": 2
   }
 ]
