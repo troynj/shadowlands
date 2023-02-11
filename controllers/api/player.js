@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
     if (!playerArr) {
       res
         .status(404)
-        .json({ message: "No monster prototype was found with that id!" });
+        .json({ message: "No player was found with that id!" });
       return;
     }
 
@@ -56,6 +56,28 @@ router.put("/:id", async (req, res) => {
     const updatedPlayer = await Player.findByPk(id);
     return res.status(200).json(updatedPlayer);
   } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a player by its `id` value
+  try {
+    // Delete the player with the given `id` from the database
+    const deleted = await Player.destroy({ where: { id: req.params.id } });
+
+    // If the player is not found, return a 404 response with a message
+    if (!deleted) {
+      return res.status(404).json({ message: "Player not found" });
+    }
+
+    // const updatedPlayer = await Player.findAll();
+    // return res.status(200).json(updatedPlayer);
+    
+    // Return a success message in the response
+    return res.status(200).json({ message: "Player deleted successfully" });
+  } catch (err) {
+    // In case of any errors, return a 400 response with the error message
     return res.status(400).json(err);
   }
 });

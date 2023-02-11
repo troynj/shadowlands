@@ -44,17 +44,41 @@ router.put("/:id", async (req, res) => {
   // update a category by its `id` value
   try {
     const { id } = req.params;
-    const [updated] = await Captured.update(req.body, { where: { id } });
+    const [updated] = await Wild.update(req.body, { where: { id } });
 
     if (!updated) {
       return res
         .status(404)
-        .json({ message: "No captured monster not found with that ID" });
+        .json({ message: "No wild monster found with that ID" });
     }
 
-    const updatedCaptured = await Captured.findByPk(id);
-    return res.status(200).json(updatedCaptured);
+    // const updatedWild = await Wild.findByPk(id);
+    // return res.status(200).json(updatedWild);
+    return res.status(200).json({ message: "Wild monster updated successfully" });
+
   } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a category by its `id` value
+  try {
+    // Delete the tag with the given `id` from the database
+    const deleted = await Wild.destroy({ where: { id: req.params.id } });
+
+    // If the tag is not found, return a 404 response with a message
+    if (!deleted) {
+      return res.status(404).json({ message: "Wild Monster not found" });
+    }
+
+    // const updatedWild = await Wild.findAll();
+    // return res.status(200).json(updatedWild);
+
+    // Return a success message in the response
+    return res.status(200).json({ message: "Wild Monster deleted successfully" });
+  } catch (err) {
+    // In case of any errors, return a 400 response with the error message
     return res.status(400).json(err);
   }
 });

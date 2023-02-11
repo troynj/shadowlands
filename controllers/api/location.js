@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
     if (!locationArr) {
       res
         .status(404)
-        .json({ message: "No monster prototype was found with that id!" });
+        .json({ message: "No location found with that id!" });
       return;
     }
 
@@ -64,6 +64,28 @@ router.put("/:id", async (req, res) => {
     const updatedLocation = await Location.findByPk(id);
     return res.status(200).json(updatedLocation);
   } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a Location by its `id` value
+  try {
+    // Delete the Location with the given `id` from the database
+    const deleted = await Location.destroy({ where: { id: req.params.id } });
+
+    // If the Location is not found, return a 404 response with a message
+    if (!deleted) {
+      return res.status(404).json({ message: "Location not found" });
+    }
+
+    // const updatedLocation = await Location.findAll();
+    // return res.status(200).json(updatedLocation);
+    
+    // Return a success message in the response
+    return res.status(200).json({ message: "Location deleted successfully" });
+  } catch (err) {
+    // In case of any errors, return a 400 response with the error message
     return res.status(400).json(err);
   }
 });

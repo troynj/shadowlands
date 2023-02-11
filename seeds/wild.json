@@ -2,366 +2,366 @@
   "attack": 38,
   "health": 133,
   "location_id": 1,
-  "protoype_id": 1
+  "prototype_id": 1
 },
 {
   "attack": 40,
   "health": 251,
   "location_id": 1,
-  "protoype_id": 2
+  "prototype_id": 2
 },
 {
   "attack": 42,
   "health": 217,
   "location_id": 1,
-  "protoype_id": 3
+  "prototype_id": 3
 },
 {
   "attack": 43,
   "health": 160,
   "location_id": 1,
-  "protoype_id": 4
+  "prototype_id": 4
 },
 {
   "attack": 45,
   "health": 156,
   "location_id": 1,
-  "protoype_id": 5
+  "prototype_id": 5
 },
 {
   "attack": 52,
   "health": 254,
   "location_id": 2,
-  "protoype_id": 6
+  "prototype_id": 6
 },
 {
   "attack": 52,
   "health": 269,
   "location_id": 2,
-  "protoype_id": 7
+  "prototype_id": 7
 },
 {
   "attack": 54,
   "health": 252,
   "location_id":2,
-  "protoype_id": 8
+  "prototype_id": 8
 },
 {
   "attack": 55,
   "health": 189,
   "location_id": 2,
-  "protoype_id": 9
+  "prototype_id": 9
 },
 {
   "attack": 57,
   "health": 256,
   "location_id": 2,
-  "protoype_id": 10
+  "prototype_id": 10
 },
 {
   "attack": 62,
   "health": 307,
   "location_id": 3,
-  "protoype_id": 11
+  "prototype_id": 11
 },
 {
   "attack": 63,
   "health": 295,
   "location_id": 3,
-  "protoype_id": 12
+  "prototype_id": 12
 },
 {
   "attack": 64,
   "health": 177,
   "location_id": 3,
-  "protoype_id": 13
+  "prototype_id": 13
 },
 {
   "attack": 65,
   "health": 238,
   "location_id": 3,
-  "protoype_id": 14
+  "prototype_id": 14
 },
 {
   "attack": 66,
   "health": 206,
   "location_id": 3,
-  "protoype_id": 15
+  "prototype_id": 15
 },
 {
   "attack": 71,
   "health": 314,
   "location_id": 4,
-  "protoype_id": 16
+  "prototype_id": 16
 },
 {
   "attack": 72,
   "health": 184,
   "location_id": 4,
-  "protoype_id": 17
+  "prototype_id": 17
 },
 {
   "attack": 73,
   "health": 262,
   "location_id": 4,
-  "protoype_id": 18
+  "prototype_id": 18
 },
 {
   "attack": 75,
   "health": 299,
   "location_id": 4,
-  "protoype_id": 19
+  "prototype_id": 19
 },
 {
   "attack": 77,
   "health": 207,
   "location_id": 4,
-  "protoype_id": 20
+  "prototype_id": 20
 },
 {
   "attack": 82,
   "health": 316,
   "location_id": 5,
-  "protoype_id": 21
+  "prototype_id": 21
 },
 {
   "attack": 83,
   "health": 150,
   "location_id": 5,
-  "protoype_id": 22
+  "prototype_id": 22
 },
 {
   "attack": 84,
   "health": 240,
   "location_id": 5,
-  "protoype_id": 23
+  "prototype_id": 23
 },
 {
   "attack": 74,
   "health": 267,
   "location_id": 5,
-  "protoype_id": 24
+  "prototype_id": 24
 },
 {
   "attack": 80,
   "health": 307,
   "location_id": 5,
-  "protoype_id": 25
+  "prototype_id": 25
 },
 {
   "attack": 93,
   "health": 281,
   "location_id": 6,
-  "protoype_id": 26
+  "prototype_id": 26
 },
 {
   "attack": 94,
   "health": 289,
   "location_id": 6,
-  "protoype_id": 27
+  "prototype_id": 27
 },
 {
   "attack": 94,
   "health": 258,
   "location_id":6,
-  "protoype_id": 28
+  "prototype_id": 28
 },
 {
   "attack": 95,
   "health": 231,
   "location_id": 6,
-  "protoype_id": 29
+  "prototype_id": 29
 },
 {
   "attack": 102,
   "health": 314,
   "location_id": 7,
-  "protoype_id": 30
+  "prototype_id": 30
 },
 {
   "attack": 104,
   "health": 173,
   "location_id": 7,
-  "protoype_id": 31
+  "prototype_id": 31
 },
 {
   "attack": 105,
   "health": 308,
   "location_id": 7,
-  "protoype_id": 32
+  "prototype_id": 32
 },
 {
   "attack": 107,
   "health": 319,
   "location_id": 7,
-  "protoype_id": 33
+  "prototype_id": 33
 },
 {
   "attack": 107,
   "health": 222,
   "location_id": 7,
-  "protoype_id": 34
+  "prototype_id": 34
 },
 {
   "attack": 114,
   "health": 293,
   "location_id": 8,
-  "protoype_id": 35
+  "prototype_id": 35
 },
 {
   "attack": 114,
   "health": 231,
   "location_id": 8,
-  "protoype_id": 36
+  "prototype_id": 36
 },
 {
   "attack": 76,
   "health": 174,
   "location_id": 8,
-  "protoype_id": 37
+  "prototype_id": 37
 },
 {
   "attack": 77,
   "health": 275,
   "location_id": 8,
-  "protoype_id": 38
+  "prototype_id": 38
 },
 {
   "attack": 78,
   "health": 278,
   "location_id": 8,
-  "protoype_id": 39
+  "prototype_id": 39
 },
 {
   "attack": 121,
   "health": 315,
   "location_id": 9,
-  "protoype_id": 40
+  "prototype_id": 40
 },
 {
   "attack": 120,
   "health": 335,
   "location_id": 9,
-  "protoype_id": 41
+  "prototype_id": 41
 },
 {
   "attack": 122,
   "health": 304,
   "location_id": 9,
-  "protoype_id": 42
+  "prototype_id": 42
 },
 {
   "attack": 123,
   "health": 394,
   "location_id": 9,
-  "protoype_id": 43
+  "prototype_id": 43
 },
 {
   "attack": 123,
   "health": 323,
   "location_id": 9,
-  "protoype_id": 44
+  "prototype_id": 44
 },
 {
   "attack": 125,
   "health": 327,
   "location_id": 10,
-  "protoype_id": 45
+  "prototype_id": 45
 },
 {
   "attack": 125,
   "health": 347,
   "location_id": 10,
-  "protoype_id": 46
+  "prototype_id": 46
 },
 {
   "attack": 126,
   "health": 347,
   "location_id": 10,
-  "protoype_id": 47
+  "prototype_id": 47
 },
 {
   "attack": 126,
   "health": 299,
   "location_id": 10,
-  "protoype_id": 48
+  "prototype_id": 48
 },
 {
   "attack": 126,
   "health": 324,
   "location_id": 10,
-  "protoype_id": 49
+  "prototype_id": 49
 },
 {
   "attack": 132,
   "health": 324,
   "location_id": 11,
-  "protoype_id": 50
+  "prototype_id": 50
 },
 {
   "attack": 133,
   "health": 358,
   "location_id": 11,
-  "protoype_id": 51
+  "prototype_id": 51
 },
 {
   "attack": 134,
   "health": 355,
   "location_id": 11,
-  "protoype_id": 52
+  "prototype_id": 52
 },
 {
   "attack": 135,
   "health": 353,
   "location_id": 11,
-  "protoype_id": 53
+  "prototype_id": 53
 },
 {
   "attack": 135,
   "health": 350,
   "location_id": 11,
-  "protoype_id": 54
+  "prototype_id": 54
 },
 {
   "attack": 140,
   "health": 345,
   "location_id": 12,
-  "protoype_id": 55
+  "prototype_id": 55
 },
 {
   "attack": 141,
   "health": 330,
   "location_id": 12,
-  "protoype_id": 56
+  "prototype_id": 56
 },
 {
   "attack": 144,
   "health": 356,
   "location_id": 12,
-  "protoype_id": 57
+  "prototype_id": 57
 },
 {
   "attack": 143,
   "health": 360,
   "location_id": 12,
-  "protoype_id": 58
+  "prototype_id": 58
 },
 {
   "attack": 143,
   "health": 360,
   "location_id": 12,
-  "protoype_id": 59
+  "prototype_id": 59
 },
 {
   "attack": 145,
   "health": 354,
   "location_id": 13,
-  "protoype_id": 60
+  "prototype_id": 60
 },
 {
   "attack": 155,
   "health": 390,
   "location_id": 13,
-  "protoype_id": 61
+  "prototype_id": 61
 }
 ]

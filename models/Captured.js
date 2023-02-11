@@ -14,17 +14,17 @@ Captured.init(
     player_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'player',
-        key: 'id'
-      }
+        model: "player",
+        key: "id",
+      },
     },
     prototype_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'prototype',
-        key: 'id'
-      }
-    }
+        model: "prototype",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,

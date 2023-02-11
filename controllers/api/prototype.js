@@ -44,17 +44,39 @@ router.put("/:id", async (req, res) => {
   // update a category by its `id` value
   try {
     const { id } = req.params;
-    const [updated] = await Captured.update(req.body, { where: { id } });
+    const [updated] = await Prototype.update(req.body, { where: { id } });
 
     if (!updated) {
       return res
         .status(404)
-        .json({ message: "No captured monster not found with that ID" });
+        .json({ message: "No monster prototype found with that ID" });
     }
 
-    const updatedCaptured = await Captured.findByPk(id);
-    return res.status(200).json(updatedCaptured);
+    const updatedPrototype = await Prototype.findByPk(id);
+    return res.status(200).json(updatedPrototype);
   } catch (err) {
+    return res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a prototype by its `id` value
+  try {
+    // Delete the prototype with the given `id` from the database
+    const deleted = await Prototype.destroy({ where: { id: req.params.id } });
+
+    // If the prototype is not found, return a 404 response with a message
+    if (!deleted) {
+      return res.status(404).json({ message: "prototype not found" });
+    }
+
+    // const updatedPrototype = await Prototype.findAll();
+    // return res.status(200).json(updatedPrototype);
+    
+    // Return a success message in the response
+    return res.status(200).json({ message: "prototype deleted successfully" });
+  } catch (err) {
+    // In case of any errors, return a 400 response with the error message
     return res.status(400).json(err);
   }
 });
