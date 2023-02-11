@@ -1,0 +1,306 @@
+[{
+    "name": "Screecher",
+    "base_attack": 33,
+    "base_health": 128
+  },
+  {
+    "name": "Blizzard Mage",
+    "base_attack": 35,
+    "base_health": 236
+  },
+  {
+    "name": "Plasmaticus",
+    "base_attack": 37,
+    "base_health": 213
+  },
+  {
+    "name": "Fire Mage",
+    "base_attack": 38,
+    "base_health": 155
+  },
+  {
+    "name": "Omenbeast",
+    "base_attack": 40,
+    "base_health": 151
+  },
+  {
+    "name": "Blightwing",
+    "base_attack": 42,
+    "base_health": 243
+  },
+  {
+    "name": "Stormbird",
+    "base_attack": 42,
+    "base_health": 259
+  },
+  {
+    "name": "Tramplehorn",
+    "base_attack": 44,
+    "base_health": 242
+  },
+  {
+    "name": "Infernoheart",
+    "base_attack": 45,
+    "base_health": 179
+  },
+  {
+    "name": "Hellfang",
+    "base_attack": 47,
+    "base_health": 246
+  },
+  {
+    "name": "Grimhaze",
+    "base_attack": 47,
+    "base_health": 292
+  },
+  {
+    "name": "Ironmaul",
+    "base_attack": 48,
+    "base_health": 280
+  },
+  {
+    "name": "Thunderhoof",
+    "base_attack": 49,
+    "base_health": 162
+  },
+  {
+    "name": "Stonecrusher",
+    "base_attack": 50,
+    "base_health": 223
+  },
+  {
+    "name": "Deepterror",
+    "base_attack": 51,
+    "base_health": 191
+  },
+  {
+    "name": "Frostgore",
+    "base_attack": 51,
+    "base_health": 294
+  },
+  {
+    "name": "Shadowstalker",
+    "base_attack": 52,
+    "base_health": 164
+  },
+  {
+    "name": "Necrotic Claw",
+    "base_attack": 53,
+    "base_health": 242
+  },
+  {
+    "name": "Bone Dragon",
+    "base_attack": 55,
+    "base_health": 279
+  },
+  {
+    "name": "Dark Conjurer",
+    "base_attack": 57,
+    "base_health": 187
+  },
+  {
+    "name": "Spectral Blade",
+    "base_attack": 57,
+    "base_health": 291
+  },
+  {
+    "name": "Hellfire Hound",
+    "base_attack": 58,
+    "base_health": 125
+  },
+  {
+    "name": "Abyssal Lord",
+    "base_attack": 59,
+    "base_health": 215
+  },
+  {
+    "name": "Mummified Pharaoh",
+    "base_attack": 59,
+    "base_health": 242
+  },
+  {
+    "name": "Night Queen",
+    "base_attack": 60,
+    "base_health": 287
+  },
+  {
+    "name": "Arachnid Empress",
+    "base_attack": 63,
+    "base_health": 221
+  },
+  {
+    "name": "Venomstrike",
+    "base_attack": 64,
+    "base_health": 259
+  },
+  {
+    "name": "Granite Guardian",
+    "base_attack": 64,
+    "base_health": 128
+  },
+  {
+    "name": "Steel Colossus",
+    "base_attack": 65,
+    "base_health": 201
+  },
+  {
+    "name": "Electrified Hornet",
+    "base_attack": 67,
+    "base_health": 290
+  },
+  {
+    "name": "Sea Viper",
+    "base_attack": 69,
+    "base_health": 138
+  },
+  {
+    "name": "Ocean Behemoth",
+    "base_attack": 70,
+    "base_health": 273
+  },
+  {
+    "name": "Woodland Wraith",
+    "base_attack": 72,
+    "base_health": 284
+  },
+  {
+    "name": "Mountain Goliath",
+    "base_attack": 72,
+    "base_health": 187
+  },
+  {
+    "name": "Shadow Assassin",
+    "base_attack": 74,
+    "base_health": 258
+  },
+  {
+    "name": "Warlord Orc",
+    "base_attack": 74,
+    "base_health": 191
+  },
+  {
+    "name": "Infernal Goblin",
+    "base_attack": 75,
+    "base_health": 174
+  },
+  {
+    "name": "Colossus Troll",
+    "base_attack": 75,
+    "base_health": 275
+  },
+  {
+    "name": "Giant Batwing",
+    "base_attack": 75,
+    "base_health": 278
+  },
+  {
+    "name": "Pestilent Rat",
+    "base_attack": 75,
+    "base_health": 198
+  },
+  {
+    "name": "Lunar Beast",
+    "base_attack": 75,
+    "base_health": 270
+  },
+  {
+    "name": "Bloodthrone Vampire",
+    "base_attack": 75,
+    "base_health": 290
+  },
+  {
+    "name": "Siren Queen",
+    "base_attack": 75,
+    "base_health": 259
+  },
+  {
+    "name": "Leviathan",
+    "base_attack": 75,
+    "base_health": 200
+  },
+  {
+    "name": "Magma Spirit",
+    "base_attack": 75,
+    "base_health": 278
+  },
+  {
+    "name": "Aether Dragon",
+    "base_attack": 75,
+    "base_health": 293
+  },
+  {
+    "name": "Frost Drake",
+    "base_attack": 75,
+    "base_health": 297
+  },
+  {
+    "name": "Chaos Demon",
+    "base_attack": 76,
+    "base_health": 239
+  },
+  {
+    "name": "Plague Fiend",
+    "base_attack": 76,
+    "base_health": 249
+  },
+  {
+    "name": "Skeleton King",
+    "base_attack": 76,
+    "base_health": 274
+  },
+  {
+    "name": "Shadow Dragon",
+    "base_attack": 77,
+    "base_health": 298
+  },
+  {
+    "name": "Blaze Phoenix",
+    "base_attack": 78,
+    "base_health": 300
+  },
+  {
+    "name": "Goblin Chieftain",
+    "base_attack": 79,
+    "base_health": 298
+  },
+  {
+    "name": "Toxic Necromancer",
+    "base_attack": 80,
+    "base_health": 295
+  },
+  {
+    "name": "Fire Elemental",
+    "base_attack": 80,
+    "base_health": 285
+  },
+  {
+    "name": "Earth Golem",
+    "base_attack": 81,
+    "base_health": 270
+  },
+  {
+    "name": "Wind Spirit",
+    "base_attack": 82,
+    "base_health": 296
+  },
+  {
+    "name": "Shadow Knight",
+    "base_attack": 83,
+    "base_health": 297
+  },
+  {
+    "name": "Necrotic Lich",
+    "base_attack": 83,
+    "base_health": 300
+  },
+  {
+    "name": "Thunder Drake",
+    "base_attack": 85,
+    "base_health": 294
+  },
+  {
+    "name": "Manbearpig",
+    "base_attack": 90,
+    "base_health": 300
+  }
+]

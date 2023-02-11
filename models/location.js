@@ -1,14 +1,15 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Monster extends Model {}
+class Location extends Model {}
 
-User.init(
+Location.init(
   {
     type: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: true,
+    },
+    name: {
+      type: DataTypes.STRING
     },
     desctription: {
       type: DataTypes.STRING,

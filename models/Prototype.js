@@ -10,9 +10,9 @@ Prototype.init(
       allowNull: false,
       unique: true,
     },
-    picture: {
-      type: DataTypes.STRING,
-    }, 
+    // picture: {
+    //   type: DataTypes.STRING,
+    // }, 
     base_attack: {
       type: DataTypes.INTEGER,
     },
