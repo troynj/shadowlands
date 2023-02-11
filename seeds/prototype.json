@@ -1,305 +1,305 @@
 [{
-    "name": "Screecher",
+    "name": "Screecher 1",
     "base_attack": 33,
     "base_health": 128
   },
   {
-    "name": "Blizzard Mage",
+    "name": "Blizzard Mage 2",
     "base_attack": 35,
     "base_health": 236
   },
   {
-    "name": "Plasmaticus",
+    "name": "Plasmaticus 3",
     "base_attack": 37,
     "base_health": 213
   },
   {
-    "name": "Fire Mage",
+    "name": "Fire Mage 4",
     "base_attack": 38,
     "base_health": 155
   },
   {
-    "name": "Omenbeast",
+    "name": "Omenbeast 5",
     "base_attack": 40,
     "base_health": 151
   },
   {
-    "name": "Blightwing",
+    "name": "Blightwing 6",
     "base_attack": 42,
     "base_health": 243
   },
   {
-    "name": "Stormbird",
+    "name": "Stormbird 7",
     "base_attack": 42,
     "base_health": 259
   },
   {
-    "name": "Tramplehorn",
+    "name": "Tramplehorn 8",
     "base_attack": 44,
     "base_health": 242
   },
   {
-    "name": "Infernoheart",
+    "name": "Infernoheart 9",
     "base_attack": 45,
     "base_health": 179
   },
   {
-    "name": "Hellfang",
+    "name": "Hellfang 10",
     "base_attack": 47,
     "base_health": 246
   },
   {
-    "name": "Grimhaze",
+    "name": "Grimhaze 11",
     "base_attack": 47,
     "base_health": 292
   },
   {
-    "name": "Ironmaul",
+    "name": "Ironmaul 12",
     "base_attack": 48,
     "base_health": 280
   },
   {
-    "name": "Thunderhoof",
+    "name": "Thunderhoof 13",
     "base_attack": 49,
     "base_health": 162
   },
   {
-    "name": "Stonecrusher",
+    "name": "Stonecrusher 14",
     "base_attack": 50,
     "base_health": 223
   },
   {
-    "name": "Deepterror",
+    "name": "Deepterror 15",
     "base_attack": 51,
     "base_health": 191
   },
   {
-    "name": "Frostgore",
+    "name": "Frostgore 16",
     "base_attack": 51,
     "base_health": 294
   },
   {
-    "name": "Shadowstalker",
+    "name": "Shadowstalker 17",
     "base_attack": 52,
     "base_health": 164
   },
   {
-    "name": "Necrotic Claw",
+    "name": "Necrotic Claw 18",
     "base_attack": 53,
     "base_health": 242
   },
   {
-    "name": "Bone Dragon",
+    "name": "Bone Dragon 19",
     "base_attack": 55,
     "base_health": 279
   },
   {
-    "name": "Dark Conjurer",
+    "name": "Dark Conjurer 20",
     "base_attack": 57,
     "base_health": 187
   },
   {
-    "name": "Spectral Blade",
+    "name": "Spectral Blade 21",
     "base_attack": 57,
     "base_health": 291
   },
   {
-    "name": "Hellfire Hound",
+    "name": "Hellfire Hound 22",
     "base_attack": 58,
     "base_health": 125
   },
   {
-    "name": "Abyssal Lord",
+    "name": "Abyssal Lord 23",
     "base_attack": 59,
     "base_health": 215
   },
   {
-    "name": "Mummified Pharaoh",
+    "name": "Mummified Pharaoh 24",
     "base_attack": 59,
     "base_health": 242
   },
   {
-    "name": "Night Queen",
+    "name": "Night Queen 25",
     "base_attack": 60,
     "base_health": 287
   },
   {
-    "name": "Arachnid Empress",
+    "name": "Arachnid Empress 26",
     "base_attack": 63,
     "base_health": 221
   },
   {
-    "name": "Venomstrike",
+    "name": "Venomstrike 27",
     "base_attack": 64,
     "base_health": 259
   },
   {
-    "name": "Granite Guardian",
+    "name": "Granite Guardian 28",
     "base_attack": 64,
     "base_health": 128
   },
   {
-    "name": "Steel Colossus",
+    "name": "Steel Colossus 29",
     "base_attack": 65,
     "base_health": 201
   },
   {
-    "name": "Electrified Hornet",
+    "name": "Electrified Hornet 30",
     "base_attack": 67,
     "base_health": 290
   },
   {
-    "name": "Sea Viper",
+    "name": "Sea Viper 31",
     "base_attack": 69,
     "base_health": 138
   },
   {
-    "name": "Ocean Behemoth",
+    "name": "Ocean Behemoth 32",
     "base_attack": 70,
     "base_health": 273
   },
   {
-    "name": "Woodland Wraith",
+    "name": "Woodland Wraith 33",
     "base_attack": 72,
     "base_health": 284
   },
   {
-    "name": "Mountain Goliath",
+    "name": "Mountain Goliath 34",
     "base_attack": 72,
     "base_health": 187
   },
   {
-    "name": "Shadow Assassin",
+    "name": "Shadow Assassin 35",
     "base_attack": 74,
     "base_health": 258
   },
   {
-    "name": "Warlord Orc",
+    "name": "Warlord Orc 36",
     "base_attack": 74,
     "base_health": 191
   },
   {
-    "name": "Infernal Goblin",
+    "name": "Infernal Goblin 37",
     "base_attack": 75,
     "base_health": 174
   },
   {
-    "name": "Colossus Troll",
-    "base_attack": 75,
+    "name": "Colossus Troll 38",
+    "base_attack": 76,
     "base_health": 275
   },
   {
-    "name": "Giant Batwing",
+    "name": "Giant Batwing 39",
     "base_attack": 75,
     "base_health": 278
   },
   {
-    "name": "Pestilent Rat",
+    "name": "Pestilent Rat 40",
     "base_attack": 75,
     "base_health": 198
   },
   {
-    "name": "Lunar Beast",
-    "base_attack": 75,
+    "name": "Lunar Beast 40",
+    "base_attack": 77,
     "base_health": 270
   },
   {
-    "name": "Bloodthrone Vampire",
+    "name": "Bloodthrone Vampire 41",
     "base_attack": 75,
     "base_health": 290
   },
   {
-    "name": "Siren Queen",
-    "base_attack": 75,
+    "name": "Siren Queen 42",
+    "base_attack": 77,
     "base_health": 259
   },
   {
-    "name": "Leviathan",
-    "base_attack": 75,
+    "name": "Leviathan 43",
+    "base_attack": 78,
     "base_health": 200
   },
   {
-    "name": "Magma Spirit",
-    "base_attack": 75,
+    "name": "Magma Spirit 44",
+    "base_attack": 79,
     "base_health": 278
   },
   {
-    "name": "Aether Dragon",
+    "name": "Aether Dragon 45",
     "base_attack": 75,
     "base_health": 293
   },
   {
-    "name": "Frost Drake",
+    "name": "Frost Drake 46",
     "base_attack": 75,
     "base_health": 297
   },
   {
-    "name": "Chaos Demon",
+    "name": "Chaos Demon 47",
     "base_attack": 76,
-    "base_health": 239
+    "base_health": 297
   },
   {
-    "name": "Plague Fiend",
+    "name": "Plague Fiend 48",
     "base_attack": 76,
     "base_health": 249
   },
   {
-    "name": "Skeleton King",
+    "name": "Skeleton King 49",
     "base_attack": 76,
     "base_health": 274
   },
   {
-    "name": "Shadow Dragon",
+    "name": "Shadow Dragon 50",
     "base_attack": 77,
     "base_health": 298
   },
   {
-    "name": "Blaze Phoenix",
+    "name": "Blaze Phoenix 51",
     "base_attack": 78,
     "base_health": 300
   },
   {
-    "name": "Goblin Chieftain",
+    "name": "Goblin Chieftain 52",
     "base_attack": 79,
     "base_health": 298
   },
   {
-    "name": "Toxic Necromancer",
+    "name": "Toxic Necromancer 53",
     "base_attack": 80,
     "base_health": 295
   },
   {
-    "name": "Fire Elemental",
+    "name": "Fire Elemental 54",
     "base_attack": 80,
     "base_health": 285
   },
   {
-    "name": "Earth Golem",
+    "name": "Earth Golem 55",
     "base_attack": 81,
     "base_health": 270
   },
   {
-    "name": "Wind Spirit",
+    "name": "Wind Spirit 56",
     "base_attack": 82,
     "base_health": 296
   },
   {
-    "name": "Shadow Knight",
+    "name": "Shadow Knight 57",
     "base_attack": 83,
     "base_health": 297
   },
   {
-    "name": "Necrotic Lich",
+    "name": "Necrotic Lich 58",
     "base_attack": 83,
     "base_health": 300
   },
   {
-    "name": "Thunder Drake",
+    "name": "Thunder Drake 59",
     "base_attack": 85,
     "base_health": 294
   },
   {
-    "name": "Manbearpig",
+    "name": "Manbearpig 60",
     "base_attack": 90,
     "base_health": 300
   }
