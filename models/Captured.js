@@ -1,29 +1,30 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Monster extends Model {}
+class Captured extends Model {}
 
-User.init(
+Captured.init(
   {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-    },
     attack: {
       type: DataTypes.INTEGER,
     },
     health: {
       type: DataTypes.INTEGER,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+    },
+    prototype_id: {
+      type: DataTypes.INTEGER,
+    }
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "captured",
   }
 );
 
-module.exports = User;
+module.exports = Captured;

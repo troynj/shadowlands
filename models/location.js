@@ -5,28 +5,22 @@ class Monster extends Model {}
 
 User.init(
   {
-    name: {
-      type: DataTypes.STRING,
+    type: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
     },
     desctription: {
       type: DataTypes.STRING,
-    },
-    fortress_id: {
-      type: DataTypes.INTEGER,
-    },
-    roster_id: {
-      type: DataTypes.INTEGER,
-    },
+    }
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "location",
   }
 );
 
-module.exports = User;
+module.exports = Location;
