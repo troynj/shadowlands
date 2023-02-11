@@ -1,0 +1,19 @@
+<style>
+  table { width: 50%; border-collapse: collapse; }
+  th, td { border: 1px solid black; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; color: black}
+  td {transition: .1s ease-in;}
+  td:hover {background-color: rgb(116, 116, 116)}
+</style>
+<section>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th>Save Date</th>
+      <th>Actions</th>
+    </tr>
+{{#each players as |player|}}
+{{>game}}
+{{/each}}
+  </table>
+</section>
