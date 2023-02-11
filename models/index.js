@@ -1,5 +1,5 @@
 const Captured = require("./Captured");
-const Location = require("./Location");
+const Location = require("./Jorney");
 const Player = require("./Player");
 const Prototype = require("./Prototype");
 const User = require("./User");
@@ -16,11 +16,11 @@ Captured.belongsTo(Prototype, {
 });
 
 Location.hasMany(Player, {
-  foreignKey: "location_id",
+  foreignKey: "journey_id",
 });
 
 Location.hasMany(Wild, {
-  foreignKey: "location_id",
+  foreignKey: "journey_id",
 });
 
 Player.belongsTo(User, {
@@ -29,7 +29,7 @@ Player.belongsTo(User, {
 });
 
 Player.belongsTo(Location, {
-  foreignKey: "location_id",
+  foreignKey: "journey_id",
   onDelete: "CASCADE"
 });
 
@@ -54,7 +54,7 @@ User.hasMany(Player, {
 });
 
 Wild.belongsTo(Location, {
-  foreignKey: "location_id",
+  foreignKey: "journey_id",
   onDelete: "CASCADE"
 });
 

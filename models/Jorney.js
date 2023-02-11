@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Location extends Model {}
+class Journey extends Model {}
 
-Location.init(
+Journey.init(
   {
     name: {
       type: DataTypes.STRING
@@ -17,8 +17,8 @@ Location.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "location",
+    modelName: "journey",
   }
 );
 
-module.exports = Location;
+module.exports = Journey;

@@ -11,10 +11,10 @@ Wild.init(
     health: {
       type: DataTypes.INTEGER,
     },
-    location_id: {
+    journey_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'location',
+        model: 'journey',
         key: 'id'
       }
     },

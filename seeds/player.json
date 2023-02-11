@@ -1,73 +1,73 @@
 [
   {
     "name": "Delta compression",
-    "location_id": 1,
+    "journey_id": 1,
     "user_id": 1
   },
   {
     "name": "Beta Sampling",
     "progress": 2,
-    "location_id": 2,
+    "journey_id": 2,
     "user_id": 2
   },
   {
     "name": "Theta Codec",
     "progress": 1,
-    "location_id": 2,
+    "journey_id": 2,
     "user_id": 3
   },
   {
     "name": "Alpha Bitdepth",
     "progress": 0,
-    "location_id": 2,
+    "journey_id": 2,
     "user_id": 4
   },
   {
     "name": "Zeta Bitstream",
     "progress": 0,
-    "location_id": 3,
+    "journey_id": 3,
     "user_id": 5
   },
   {
     "name": "Kappa Encoding",
     "progress": 1,
-    "location_id": 3,
+    "journey_id": 3,
     "user_id": 1
   },
   {
     "name": "Lambda Decoding",
     "progress": 2,
-    "location_id": 3,
+    "journey_id": 3,
     "user_id": 2
   },
   {
     "name": "Sigma Streaming",
     "progress": 2,
-    "location_id": 4,
+    "journey_id": 4,
     "user_id": 3
   },
   {
     "name": "Omega Compression",
     "progress": 1,
-    "location_id": 4,
+    "journey_id": 4,
     "user_id": 4
   },
   {
     "name": "Epislon Resolution",
     "progress": 0,
-    "location_id": 4,
+    "journey_id": 4,
     "user_id": 5
   },
   {
     "name": "repislon Otis",
     "progress": 1,
-    "location_id": 2,
+    "journey_id": 2,
     "user_id": 1
   },
   {
     "name": "gernzle lusomn",
     "progress": 0,
-    "location_id": 1,
+    "journey_id": 1,
     "user_id": 2
   }
 ]
