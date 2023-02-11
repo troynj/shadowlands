@@ -1,8 +1,10 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #333333;
-  --tertiary-color: #1c1c1c;
   --accent-color: #000;
+  --contrast-color: #747474;
+
+  --dark-font: var(--accent-color);
 }
 
 body {
@@ -49,3 +51,35 @@ nav a:hover {
   background-color: var(--accent-color);
   border-radius: 10px;
 }
+
+.dash {
+  display: flex;
+  justify-content: center;
+  margin: 10%;
+  /* height: 100vh; */
+}
+
+.dash table {
+  width: 50%;
+  border-collapse: collapse;
+}
+.dash th,
+.dash td {
+  border: 1px solid var(--accent-color);
+  padding: 8px;
+  text-align: left;
+}
+.dash th {
+  background-color: var(--primary-color);
+  color: var(--dark-font);
+}
+.dash td {
+  transition: 0.1s ease-in;
+}
+.dash td:hover {
+  background-color: var(--contrast-color);
+}
+
+/* .saved_games {
+  margin:auto;
+} */
