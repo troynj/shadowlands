@@ -1,11 +1,9 @@
 # shadowlands
 Battle Through Darkness
-# Shadowlands
-Battle Through Darkness
+
 
 # Table of Contents
 - [shadowlands](#shadowlands)
-- [Shadowlands](#shadowlands-1)
 - [Table of Contents](#table-of-contents)
 - [Description](#description)
 - [Installtion Instructions](#installtion-instructions)
@@ -43,4 +41,4 @@ Battle Through Darkness
 # Credits
 - Ashley Sese
 - Michael Reyna
-- Troy Johnson 
+- Troy Johnson

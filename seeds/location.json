@@ -51,11 +51,11 @@
     "name": "Dragon's Lair",
     "description": "The player must penetrate the lair of a fearsome dragon, who guards a powerful artifact that the player needs in order to defeat the darkness once and for all."
   },
-  
+{
   "name": "The Final Battle",
   "description": "The player must face the ultimate test as they engage in a final showdown with the source of the darkness, putting everything on the line in a battle for the fate of Shadowland."
   },
-  
+{
   "name": "Victory in Shadowland",
   "description": "The player emerges from the darkness as the victor, having defeated the source of evil and brought light back to Shadowland."
   }
