@@ -1,76 +1,61 @@
 [
   {
-    "type": 1,
     "name": "Encountering the Darkness",
     "description": "The player must navigate through the dark and foreboding land of Shadowland, fighting off the first waves of monsters as they begin their journey."
   },
   {
-    "type": 1,
     "name": "The Dank Dungeon",
     "description": "The player descends into the depths of a foul dungeon filled with all manner of disgusting creatures and treacherous traps."
   },
   {
-    "type": 1,
     "name": "Goblin's Den",
     "description": "The player must fight their way through hordes of goblin minions and defeat their goblin chieftain in order to claim the treasure hidden within their den."
   },
   {
-    "type": 1,
     "name": "Skeleton's Lament",
     "description": "The player must battle their way through a graveyard filled with restless skeletons, who have risen from their graves to seek revenge against the living."
   },
   {
-    "type": 1,
     "name": "The Haunted Forest",
     "description": "The player must brave a dark and eerie forest filled with ghostly apparitions, howling wolves, and other dangerous creatures."
   },
   {
-    "type": 1,
     "name": "Crypt of Despair",
     "description": "The player must delve deep into a mausoleum filled with the remains of the undead, battling hordes of zombie warriors and their necromancer leader."
   },
   {
-    "type": 1,
     "name": "The Black Bog",
     "description": "The player must wade through a fetid swamp filled with poisonous plants and dangerous predators, in search of an ancient artifact."
   },
   {
-    "type": 1,
     "name": "Necropolis Nights",
     "description": "The player must navigate the dark streets of a city of the dead, where vengeful spirits haunt the night and evil sorcerers plot their downfall."
   },
   {
-    "type": 1,
     "name": "Undead Uprising",
     "description": "The player must confront a horde of the undead, who have risen from their graves to threaten the land of the living."
   },
   {
-    "type": 1,
     "name": "Tomb of Terrors",
     "description": "The player must venture into the depths of a forbidden tomb, where they will face all manner of horrifying creatures and malevolent spirits."
   },
   {
-    "type": 1,
     "name": "Abyssal Ascent",
     "description": "The player must climb a towering peak that rises from the depths of Shadowland, battling all manner of fearsome beasts and diabolical demons."
   },
   {
-    "type": 1,
     "name": "Demon's Domain",
     "description": "The player must journey to the heart of Shadowland, where they will confront the most powerful demons in their bid to defeat the darkness."
   },
   {
-    "type": 1,
     "name": "Dragon's Lair",
     "description": "The player must penetrate the lair of a fearsome dragon, who guards a powerful artifact that the player needs in order to defeat the darkness once and for all."
   },
-  {
-  "type": 1,
+  
   "name": "The Final Battle",
   "description": "The player must face the ultimate test as they engage in a final showdown with the source of the darkness, putting everything on the line in a battle for the fate of Shadowland."
   },
-  {
-  "type": 1,
+  
   "name": "Victory in Shadowland",
   "description": "The player emerges from the darkness as the victor, having defeated the source of evil and brought light back to Shadowland."
   }
