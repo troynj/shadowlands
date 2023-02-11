@@ -1,30 +1,27 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Journey extends Model {}
+class ShadowBeast extends Model {}
 
-Journey.init(
+ShadowBeast.init(
   {
-    name: {
-      type: DataTypes.STRING
+    attack: {
+      type: DataTypes.INTEGER,
     },
-    intro: {
-      type: DataTypes.STRING,
+    health: {
+      type: DataTypes.INTEGER,
     },
-    conc: {
-      type: DataTypes.STRING,
-    },
-    opponent_id: {
+    journey_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'wild',
+        model: 'journey',
         key: 'id'
       }
     },
-    beast_id: {
+    prototype_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'shadowbeast',
+        model: 'prototype',
         key: 'id'
       }
     }
@@ -34,8 +31,8 @@ Journey.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "journey",
+    modelName: "shadowbeast",
   }
 );
 
-module.exports = Journey;
+module.exports = ShadowBeast;

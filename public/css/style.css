@@ -43,8 +43,8 @@ nav a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
-  font-size: 18px;
-  transition: all 0.2s ease-in-out;
+  /* font-size: 1em; */
+  /* transition: all 0.2s ease-in-out; */
 }
 
 nav a:hover {
@@ -60,7 +60,6 @@ nav a:hover {
 }
 
 .dash table {
-  width: 50%;
   border-collapse: collapse;
 }
 .dash th,
@@ -73,13 +72,13 @@ nav a:hover {
   background-color: var(--primary-color);
   color: var(--dark-font);
 }
-.dash td {
+/* .dash td {
   transition: 0.1s ease-in;
-}
-.dash td:hover {
+} */
+.dash tr:hover {
   background-color: var(--contrast-color);
 }
 
-/* .saved_games {
-  margin:auto;
-} */
+.dash a:hover{
+  color: purple;
+}

@@ -1,7 +1,8 @@
 const Captured = require("./Captured");
-const Location = require("./Jorney");
+const Journey = require("./Jorney");
 const Player = require("./Player");
 const Prototype = require("./Prototype");
+const ShadowBeast = require("./ShadowBeast");
 const User = require("./User");
 const Wild = require("./Wild");
 
@@ -15,20 +16,32 @@ Captured.belongsTo(Prototype, {
   onDelete: "CASCADE"
 });
 
-Location.hasMany(Player, {
+Journey.hasMany(Player, {
   foreignKey: "journey_id",
 });
 
-Location.hasMany(Wild, {
+Journey.hasMany(Wild, {
   foreignKey: "journey_id",
 });
+
+Journey.hasMany(ShadowBeast, {
+  foreignKey: "journey_id",
+});
+
+Journey.belongsTo(Wild, {
+  foreignKey: 'opponent_id'
+})
+
+Journey.belongsTo(ShadowBeast, {
+  foreignKey: 'beast_id'
+})
 
 Player.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "CASCADE"
 });
 
-Player.belongsTo(Location, {
+Player.belongsTo(Journey, {
   foreignKey: "journey_id",
   onDelete: "CASCADE"
 });
@@ -43,17 +56,34 @@ Prototype.hasMany(Captured, {
   onDelete: "CASCADE"
 });
 
+Prototype.hasMany(ShadowBeast, {
+  foreignKey: "prototype_id",
+  onDelete: "CASCADE"
+});
+
 Prototype.hasMany(Wild, {
   foreignKey: "prototype_id",
   onDelete: "CASCADE"
 });
+
+ShadowBeast.belongsTo(Prototype, {
+  foreignKey: 'prototype_id'
+})
+
+ShadowBeast.belongsTo(Journey, {
+  foreignKey: 'prototype_id'
+})
+
+ShadowBeast.hasOne(Journey, {
+  foreignKey: 'beast_id'
+})
 
 User.hasMany(Player, {
   foreignKey: "user_id",
   onDelete: "CASCADE"
 });
 
-Wild.belongsTo(Location, {
+Wild.belongsTo(Journey, {
   foreignKey: "journey_id",
   onDelete: "CASCADE"
 });
@@ -63,4 +93,8 @@ Wild.belongsTo(Prototype, {
   onDelete: "CASCADE"
 });
 
-module.exports = { Captured, Location, Player, Prototype, User, Wild };
+Wild.hasOne(Journey, {
+  foreignKey: 'opponent_id'
+})
+
+module.exports = { Captured, Journey, Player, Prototype, ShadowBeast, User, Wild };

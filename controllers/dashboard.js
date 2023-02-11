@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const {
   Captured,
-  Location,
+  Journey,
   Player,
   Prototype,
   User,
@@ -16,9 +16,7 @@ router.get("/:id", async (req, res) => {
     const user = await User.findByPk(id, {
       include: [
         {
-          model: Player, include: [{ model: Location}],
-          where: { user_id: id },
-          
+          model: Player, include: [{ model: Journey}],          
         }
       ],
     });
