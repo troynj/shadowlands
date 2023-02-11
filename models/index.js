@@ -28,13 +28,13 @@ Journey.hasMany(ShadowBeast, {
   foreignKey: "journey_id",
 });
 
-Journey.belongsTo(Wild, {
-  foreignKey: 'opponent_id'
-})
+// Journey.belongsTo(Wild, {
+//   foreignKey: 'opponent_id'
+// })
 
-Journey.belongsTo(ShadowBeast, {
-  foreignKey: 'beast_id'
-})
+// Journey.belongsTo(ShadowBeast, {
+//   foreignKey: 'beast_id'
+// })
 
 Player.belongsTo(User, {
   foreignKey: "user_id",
@@ -74,9 +74,9 @@ ShadowBeast.belongsTo(Journey, {
   foreignKey: 'prototype_id'
 })
 
-ShadowBeast.hasOne(Journey, {
-  foreignKey: 'beast_id'
-})
+// ShadowBeast.hasOne(Journey, {
+//   foreignKey: 'beast_id'
+// })
 
 User.hasMany(Player, {
   foreignKey: "user_id",
@@ -93,8 +93,8 @@ Wild.belongsTo(Prototype, {
   onDelete: "CASCADE"
 });
 
-Wild.hasOne(Journey, {
-  foreignKey: 'opponent_id'
-})
+// Wild.hasOne(Journey, {
+//   foreignKey: 'opponent_id'
+// })
 
 module.exports = { Captured, Journey, Player, Prototype, ShadowBeast, User, Wild };

@@ -9,25 +9,25 @@ Journey.init(
       type: DataTypes.STRING
     },
     intro: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
     conc: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
     },
-    opponent_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'wild',
-        key: 'id'
-      }
-    },
-    beast_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'shadowbeast',
-        key: 'id'
-      }
-    }
+    // opponent_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'wild',
+    //     key: 'id'
+    //   }
+    // },
+    // beast_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'shadowbeast',
+    //     key: 'id'
+    //   }
+    // }
   },
   {
     sequelize,

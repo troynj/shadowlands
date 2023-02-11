@@ -1,5 +1,4 @@
 const router = require("express").Router();
-
 const {
   Captured,
   Journey,
@@ -31,14 +30,13 @@ async function renderGamestate(progress, p_id) {
   switch (progress) {
     case 0:
       //set handlbars template
-      html = "intro";
       //get the current journey its associated data
       //associated data: intro description
       //associated data: wild monster array
-      var introData = await Journey.findByPk(p_id, {
+      const introData = await Journey.findByPk(p_id, {
         include: [
-          { model: Wild, where: { Journey_id: p_id } },
-          { model: ShadowBeast, where: { Journey_id: p_id } },
+          { model: Wild, where: { journey_id: p_id } },
+          { model: ShadowBeast, where: { journey_id: p_id } },
         ],
       });
       const { intro, wilds, shadowbeasts } = introData.get({ plain: true });
@@ -48,36 +46,43 @@ async function renderGamestate(progress, p_id) {
       const beast = Math.floor(Math.random() * shadowbeasts.length);
 
       //update table attributes
-      await Journey.update(
-        { opponent_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id },
-        { where: { id: p_id } }
-      );
+      // await Journey.update(
+      //   { opponent_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id },
+      //   { where: { id: p_id } }
+      // );
 
       console.log("Entered Case 0");
       console.log(p_id);
       console.log(opponent);
       console.log(shadowbeasts);
 
-      // data = {wild: wilds[opponent], beast: shadowbeasts[beast]}
+      html = "intro";
+      data = {
+        intro,
+        wild_id: wilds[opponent].id,
+        beast_id: shadowbeasts[beast].id,
+      };
+      //console.log({intro, wild_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id})
+      break;
+
+    case 1:
+      const arenaData = await arena.findByPk(id);
+      html = "battle";
+      data = arenaData.get({ plain: true });
 
       break;
-    case 1:
-      html = "battle";
-      var { conc } = await Journey.findByPk(id);
-      data = conc;
-      break;
     case 2:
-      html = "conc";
       var { conc } = await Journey.findByPk(id);
-      data = conc;
-      console.log("Entered Case 2");
+      const arenaConc = await arena.findByPk(id);
+      const stats = arenaConc.get({ plain: true });
+
+      html = "conc";
+      data = { conc, stats };
+      // console.log("Entered Case 2");
       break;
     default:
   }
-  return {
-    name: html,
-    data,
-  };
+  return [html, data];
 }
 
 module.exports = router;
