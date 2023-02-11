@@ -13,9 +13,17 @@ Wild.init(
     },
     location_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'location',
+        key: 'id'
+      }
     },
     prototype_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'prototype',
+        key: 'id'
+      }
     }
   },
   {

@@ -11,10 +11,10 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   await Location.bulkCreate(location);
+  await Player.bulkCreate(player);
   await Prototype.bulkCreate(prototype);
   await Wild.bulkCreate(wild);
   await Captured.bulkCreate(captured);
-  await Player.bulkCreate(player);
 
   process.exit(0);
 };

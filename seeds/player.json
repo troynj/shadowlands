@@ -3,21 +3,6 @@
     "name": "Delta compression",
     "email": "seed@seed.com",
     "password": "seed",
-    "progress": 0,
-    "location_id": 1
-  },
-  {
-    "name": "Echo Lossless",
-    "email": "echo@lossless.com",
-    "password": "echo",
-    "progress": 1,
-    "location_id": 1
-  },
-  {
-    "name": "Gamma Bitrate",
-    "email": "gamma@bitrate.com",
-    "password": "gamma",
-    "progress": 2,
     "location_id": 1
   },
   {

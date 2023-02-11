@@ -11,11 +11,19 @@ Captured.init(
     health: {
       type: DataTypes.INTEGER,
     },
-    user_id: {
+    player_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'player',
+        key: 'id'
+      }
     },
     prototype_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'prototype',
+        key: 'id'
+      }
     }
   },
   {

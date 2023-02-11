@@ -5,13 +5,10 @@ class Location extends Model {}
 
 Location.init(
   {
-    type: {
-      type: DataTypes.INTEGER,
-    },
     name: {
       type: DataTypes.STRING
     },
-    desctription: {
+    description: {
       type: DataTypes.STRING,
     }
   },

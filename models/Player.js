@@ -19,6 +19,9 @@ Player.init(
       allowNull: false,
       unique: true,
     },
+    progress: {
+      type: DataTypes.INTEGER,
+    },
     location_id: {
       type: DataTypes.INTEGER,
       references: {
