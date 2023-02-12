@@ -1,49 +1,13 @@
 <style>
-  .scene {
-    display: flex;
-    flex-direction: column;
-    margin: 5em;
-  }
-
-.stats {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-}
-  .arena {
-    border: 10px solid #fff;
-    margin: 50px auto;
-    padding: 30px;
-    width: 40%;
-    overflow: hidden;
-  }
-
-  /* Style the monsters */
-  .monster {
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: ' ';
-    height: 300px;
-    width: 100%;
-  }
-  .monster-1 {
-    background-image: url("/assets/green.png");
-  }
-
-  .monster-2 {
-    background-image: url("/assets/grey.png");
-  }
-
-  #atk-btn{
-    padding: 2em;
-    background-color: orangered;
-  }
-
-    #atk-btn:hover{
-  
-    background-color: rgb(255, 0, 0);
-  }
+  .scene { display: flex; flex-direction: column; margin: 5em; } .stats {
+  display: flex; flex-direction: row; justify-content: space-around; text-align:
+  center; } .arena { border: 10px solid #fff; margin: 50px auto; padding: 30px;
+  width: 40%; overflow: hidden; } /* Style the monsters */ .monster {
+  background-repeat: no-repeat; background-size: contain; content: ' '; height:
+  300px; width: 100%; } .monster-1 { background-image: url("/assets/green.png");
+  } .monster-2 { background-image: url("/assets/grey.png"); } #atk-btn{ padding:
+  2em; background-color: orangered; } #atk-btn:hover{ background-color: rgb(255,
+  0, 0); }
 </style>
 <section class="scene">
   <section class="stats">
@@ -64,3 +28,4 @@
     <div class="monster monster-2"></div>
   </section>
 </section>
+<script src="/js/attackloop.js"></script>

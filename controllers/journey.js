@@ -14,7 +14,10 @@ router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { progress } = await Player.findByPk(3);
+    const { progress } = await Player.findByPk(5);
+    // const { progress, captureds } = await Player.findByPk(id, {
+    //   include: [{model: Captured, where: {player_id: id}}]
+    // });
     // const {progress} = player.get({ plain: true });
     console.log("progress", progress);
 
@@ -30,7 +33,7 @@ router.get("/:id", async (req, res) => {
 
     // html = "conc";
     // data = { conc, stats };
-console.log("check this: ")
+// console.log("check this: ")
 const battleData = await renderGamestate(progress, id)
 console.log("Battle Data: ", ...battleData)
     res.render(...battleData);

@@ -8,12 +8,24 @@ Arena.init(
     captured_attack: {
       type: DataTypes.INTEGER,
     },
+    // captured_special: {
+    //   type: DataTypes.INTEGER,
+    // },
+    // captured_defense: {
+    //   type: DataTypes.INTEGER,
+    // },
     captured_health: {
       type: DataTypes.INTEGER,
     },
-    oponent_attack: {
+    opponent_attack: {
       type: DataTypes.INTEGER,
     },
+    // opponent_special: {
+    //   type: DataTypes.INTEGER,
+    // },
+    // oponent_defense: {
+    //   type: DataTypes.INTEGER,
+    // },
     opponent_health: {
       type: DataTypes.INTEGER,
     }
