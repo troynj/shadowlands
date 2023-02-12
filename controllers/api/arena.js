@@ -9,6 +9,7 @@ const {
   User,
   Wild,
 } = require("../../models");
+console.log(" FILE ------ controllers/api/arena.js ---------")
 
 router.get("/", async (req, res) => {
   try {
@@ -39,38 +40,46 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log("FUNCTION -------- post - api/ -------------")
   try {
-    const { id } = req.body;
     const { type } = req.body;
-    const opp =
+    console.log("line 46 - type: (Wild/Beast)", type)
+    const { id } = req.body;
+    const opponent =
       type === "Wild"
         ? await Wild.findByPk(id)
         : await ShadowBeast.findByPk(id);
-
-    if (!opp) {
+console.log("opponent: plain:false", opponent)
+    if (!opponent) {
       res.status(404).json({ message: "No opponent found with that id!" });
       return;
     }
-    const opponent = opp.get({ plain: true });
-    console.log("opp :", opponent)
+    const opp = opponent.get({ plain: true });
+    console.log("------opp: plain:true ----", opponent)
 
     // const playerData = await Player.findByPk(req.session.player.id, {
     const playerData = await Player.findByPk(5, {
       include: [{ model: Captured, where: { id: 5 } }],
     });
-
+console.log("playerData: plain:false", playerData)
     if(!playerData) {
     res.status(404).json({ message: "No player/captured monster found with that id!" });
     return;
   }
     const player = playerData.get({ plain: true });
-console.log(player)
+    console.log("------player: plain:true ----", player)
+    console.log(" V v V v V v V v V creating-arena V v V v V v V v V v V")
     const newArena = await Arena.create({
+      captured_id: player.captured.id,
+      // captured_id: player.captured.name,
       captured_attack: player.captured.attack,
       captured_health: player.captured.health,
-      opponent_attack: opponent.attack,
-      opponent_health: opponent.health,
+      opponent_type: type,
+      opponent_attack: opp.attack,
+      opponent_health: opp.health,
     });
+
+    console.log("---A---R---E---N---A---", newArena)
     res.status(200).json(newArena);
   } catch (err) {
     res.status(400).json(err);

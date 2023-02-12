@@ -5,6 +5,10 @@ class Arena extends Model {}
 
 Arena.init(
   {
+    
+    captured_id: {
+      type: DataTypes.INTEGER,
+    },
     captured_attack: {
       type: DataTypes.INTEGER,
     },
@@ -16,6 +20,9 @@ Arena.init(
     // },
     captured_health: {
       type: DataTypes.INTEGER,
+    },
+    opponent_type: {
+      type: DataTypes.STRING,
     },
     opponent_attack: {
       type: DataTypes.INTEGER,

@@ -90,13 +90,9 @@ async function renderGamestate(progress, p_id) {
         //html = "arena";
         //data = arenaData.get({ plain: true });
         
-        html = "arena";
-        data = {
-          captured_attack: 123,
-          captured_health: 123,
-          opponent_attack: 123,
-          opponent_health: 123,
-        };
+      const monster = await Arena.findByPk(1)
+      html ="arena"
+      data = monster.get({plain:true})
         
         console.log("Entered Case 1", data);
         break;
@@ -105,10 +101,10 @@ async function renderGamestate(progress, p_id) {
           // const arenaConc = await Arena.findByPk(p_id);
           // const stats = arenaConc.get({ plain: true });
           stats = {
-            captured_attack: 123,
-            captured_health: 123,
-            opponent_attack: 123,
-            opponent_health: 123,
+            captured_attack: 1,
+            captured_health: 1,
+            opponent_attack: 1,
+            opponent_health: 1,
           };
           html = "conc";
           data = { conc, stats };
@@ -117,7 +113,7 @@ async function renderGamestate(progress, p_id) {
           break;
     default:
   }
-  // console.log( "return value: ", html.toString() , " + " , data, "||")
+  console.log( "return value: ", html.toString() , " + " , data, "||")
   return [html, data];
 }
 

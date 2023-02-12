@@ -39,6 +39,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  console.log("---E-N-T-E-R-E-D-----P-L-A-Y-E-R-----U-P-D-A-T-E---")
   // update a category by its `id` value
   try {
     const { id } = req.params;
@@ -49,6 +50,7 @@ router.put("/:id", async (req, res) => {
     }
 
     const updatedPlayer = await Player.findByPk(id);
+    console.log("updatedPlayer", updatedPlayer)
     return res.status(200).json(updatedPlayer);
   } catch (err) {
     return res.status(400).json(err);

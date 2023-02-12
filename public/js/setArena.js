@@ -1,4 +1,4 @@
-async function create(type, id) {
+async function createArena(type, id) {
   const response = await fetch(`/api/arena/`, {
     method: "POST",
     headers: {
@@ -15,11 +15,34 @@ async function create(type, id) {
   }
 }
 
+async function updateProgress(id) {
+    const response = await fetch(`/api/player/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+       progress: 1
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log("Player progress update successful:", data);
+    } else {
+      console.error("Error updating player Progress:", response.statusText);
+    }
+  }
+
 //create arena
 document.querySelectorAll("button").forEach((btn) =>
-  btn.addEventListener("click", function (event) {
+  btn.addEventListener("click", async function (event) {
     const { name, id } = event.target
-    create(name, id)
-    // document.location.reload();
+    console.log(event.target)
+    console.log("name", name)
+    console.log("id", id)
+    await createArena(name, id)
+    await updateProgress(5)
+    document.location.reload();
   })
 );

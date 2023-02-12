@@ -1,21 +1,18 @@
-
+let myAtk = document.getElementById("my-atk");
+let myHp = document.getElementById("my-hp");
+let oppAtk = document.getElementById("opp-atk");
+let oppHp = document.getElementById("opp-hp");
 let attackbtn = document.getElementById("atk-btn");
+let myAtkArr = myAtk.textContent.split(" ");
+let myHpArr = myHo.textContent.split(" ");
+let oppAtkArr = oppAtk.textContent.split(" ");
+let oppHpArr = oppHp.textContent.split(" ");
+let result;
 
 attackbtn.addEventListener("click", attack);
 
 function attack() {
   attackbtn.removeEventListener("click", attack);
-
-  let myAtk = document.getElementById("my-atk");
-let myHp = document.getElementById("my-hp");
-let oppAtk = document.getElementById("opp-atk");
-let oppHp = document.getElementById("opp-hp");
-let myAtkArr = myAtk.textContent.split(" ");
-let myHpArr = myHp.textContent.split(" ");
-let oppAtkArr = oppAtk.textContent.split(" ");
-let oppHpArr = oppHp.textContent.split(" ");
-let result;
-
 
   result = Number(oppHpArr[1]) - Number(myAtkArr[1]);
   oppHp.textContent = "Health: ".concat(result.toString());
@@ -38,11 +35,7 @@ let result;
     myHp.textContent = "Health: ".concat(result.toString());
     document.body.style.backgroundColor = "orangered";
     myHp.style.fontSize = "200%";
-    
-  if (result <= 0) {
-    winner("opp", );
-    return;
-  }
+
     setTimeout(function () {
       document.body.style.backgroundColor = "";
       myHp.style.fontSize = "100%";
@@ -50,7 +43,10 @@ let result;
     }, 500);
   }, 2000);
 
-
+  if (result <= 0) {
+    winner("opp");
+    return;
+  }
 }
 
 // function winner(monster) {
@@ -68,6 +64,27 @@ let result;
 //   }
 
 //   document.location.reload();
+// }
+
+// async function consumeStats() {
+//   var modal = document.getElementById("consume-selection");
+//   var select = document.getElementsById("select");
+
+//   modal.style.display = "block";
+//   select.onclick = function () {
+//     document.getElementById("add-atk").addEventListener("click", add);
+//     document.getElementById("add-hp").addEventListener("click", add);
+//     function add(event) {
+//       let { textContent, id } = event.target;
+//       const selected = textContent.split(" ");
+//       const result = {};
+//       selected[1] === "Attack"
+//         ? (result.attack = Number(myAtkArr[1] + Number(selected[0])))
+//         : (result.health = Number(myHpArr[1] + Number(selected[0])));
+//       updateCaptured(id, result);
+//     }
+//     modal.style.display = "none";
+//   };
 // }
 
 // async function updateProgress(id, { result } ) {
