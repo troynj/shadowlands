@@ -6,7 +6,7 @@ router.get("/", async (req, res) => {
     const wildArr = await Wild.findAll();
     // const captured = capturedArr.map((captured) => captured.get({ plain: true }));
 
-    res.render('arena', wildArr);
+    res.render('landing', wildArr);
   } catch (err) {
     res.status(500).json(err);
   }
