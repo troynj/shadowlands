@@ -28,7 +28,7 @@ async function updateProgress(id) {
 
     if (response.ok) {
       const data = await response.json();
-      console.log("Player progress update successful:", data);
+      console.log("Successfully updated player progress:", data);
     } else {
       console.error("Error updating player Progress:", response.statusText);
     }

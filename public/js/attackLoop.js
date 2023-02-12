@@ -1,30 +1,33 @@
-
-let attackbtn = document.getElementById("atk-btn");
-
-attackbtn.addEventListener("click", attack);
-
-function attack() {
-  attackbtn.removeEventListener("click", attack);
-
-  let myAtk = document.getElementById("my-atk");
-let myHp = document.getElementById("my-hp");
-let oppAtk = document.getElementById("opp-atk");
-let oppHp = document.getElementById("opp-hp");
-let myAtkArr = myAtk.textContent.split(" ");
-let myHpArr = myHp.textContent.split(" ");
+const attackBtn = document.getElementById("atk-btn");
+attackBtn.addEventListener("click", attack);
+const capAtk = document.getElementById("cap-atk");
+const capHp = document.getElementById("cap-hp");
+const oppAtk = document.getElementById("opp-atk");
+const oppHp = document.getElementById("opp-hp");
+let capAtkArr = capAtk.textContent.split(" ");
+let capHpArr = capHp.textContent.split(" ");
 let oppAtkArr = oppAtk.textContent.split(" ");
 let oppHpArr = oppHp.textContent.split(" ");
-let result;
+const capOriginalA = Number(capAtkArr[1]);
+const capOriginalH = Number(capHpArr[1]);
 
+function attack() {
+  capAtkArr = capAtk.textContent.split(" ");
+  capHpArr = capHp.textContent.split(" ");
+  oppAtkArr = oppAtk.textContent.split(" ");
+  oppHpArr = oppHp.textContent.split(" ");
+  attackBtn.removeEventListener("click", attack);
 
-  result = Number(oppHpArr[1]) - Number(myAtkArr[1]);
+  let result;
+
+  result = Number(oppHpArr[1]) - Number(capAtkArr[1]);
   oppHp.textContent = "Health: ".concat(result.toString());
 
   document.body.style.backgroundColor = "orangered";
   oppHp.style.fontSize = "200%";
 
   if (result <= 0) {
-    winner("me");
+    winner("cap");
     return;
   }
 
@@ -34,41 +37,59 @@ let result;
   }, 500);
 
   setTimeout(function () {
-    result = Number(myHpArr[1]) - Number(oppAtkArr[1]);
-    myHp.textContent = "Health: ".concat(result.toString());
+    result = Number(capHpArr[1]) - Number(oppAtkArr[1]);
+    capHp.textContent = "Health: ".concat(result.toString());
     document.body.style.backgroundColor = "orangered";
-    myHp.style.fontSize = "200%";
-    
-  if (result <= 0) {
-    winner("opp", );
-    return;
-  }
+    capHp.style.fontSize = "200%";
+
+    if (result <= 0) {
+      winner("opp");
+      return;
+    }
     setTimeout(function () {
       document.body.style.backgroundColor = "";
-      myHp.style.fontSize = "100%";
-      attackbtn.addEventListener("click", attack);
+      capHp.style.fontSize = "100%";
+      attackBtn.addEventListener("click", attack);
     }, 500);
   }, 2000);
-
-
 }
 
-// function winner(monster) {
-//   if (monster === "opp") {
-//     updateProgress(5, 0);
-//   } else if (
-//     monster === "me" &&
-//     document.getElementById(enemy).textContent === "Wild Monster"
-//   ) {
-//     updateProgress(5, 0);
-//     consumeStats(5);
-//   } else if (document.getElementById(enemy).textContent === "Beast Monster") {
-//     updateProgress(5, 2);
-//     consumeStats(5);
-//   }
+function winner(monster) {
+  console.log(monster);
+  const enemyType = document.getElementById("enemy").textContent;
 
-//   document.location.reload();
-// }
+  if (monster === "opp") {
+    console.log("Entered 1");
+    // updateProgress(5, 0);
+  } else if (enemyType == "Wild Monster") {
+    // updateProgress(5, 0);
+    increaseStats();
+  } else if (enemyType === "Beast Monster") {
+    // updateProgress(5, 2);
+    increaseStats();
+  }
+
+  // document.location.reload();
+}
+
+function increaseStats() {
+  const backdropEl = document.getElementById("backdrop");
+  backdropEl.style.display = "flex";
+
+  document.querySelectorAll("#modal tr").forEach((el) => {
+    el.addEventListener("click", async function (event) {
+      // event.preventDefault();
+      const capMonId = document.querySelector("[tag]").getAttribute("tag");
+      const stat =
+        event.target.id === "atk"
+          ? { attack: 5 + capOriginalA }
+          : { health: 5 + capOriginalH };
+
+      updateCaptured(capMonId, stat);
+      backdropEl.style.display = "none";
+    });
+  });
+}
 
 // async function updateProgress(id, { result } ) {
 //   const response = await fetch(`/api/player/${id}`, {
@@ -87,16 +108,25 @@ let result;
 //   }
 // }
 
-// async function updateCaptured(id, ammt, stat) {
-//   const response = await fetch(`/api/captured/${id}`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       attack: 5,
-//     }),
-//   });
+async function updateCaptured(id, stat) {
+  const response = await fetch(`/api/captured/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(stat),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    console.log("Successfully updated captured monster's stat: ", data);
+  } else {
+    console.error(
+      "Error updating captured monster's stat:",
+      response.statusText
+    );
+  }
+}
 
 //   if (response.ok) {
 //     const data = await response.json();

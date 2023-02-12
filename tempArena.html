@@ -4,15 +4,12 @@
     flex-direction: column;
     margin: 5em;
   }
-
   .stats {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    text-align:
-      center;
+    text-align: center;
   }
-
   .arena {
     border: 10px solid #fff;
     margin: 50px auto;
@@ -20,33 +17,28 @@
     width: 40%;
     overflow: hidden;
   }
-
   .monster {
     background-repeat: no-repeat;
     background-size: contain;
-    content: ' ';
+    content: " ";
     height: 300px;
     width: 100%;
   }
-
   .monster-1 {
     background-image: url("/assets/green.png");
   }
-
   .monster-2 {
     background-image: url("/assets/grey.png");
   }
-
   #atk-btn {
     padding: 2em;
     background-color: orangered;
   }
-
   #atk-btn:hover {
-    background-color: rgb(255, 0,
-        0);
+    background-color: rgb(255, 0, 0);
   }
   #backdrop {
+    display: flex;
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -56,7 +48,6 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 1;
-    display: none;
   }
   #modal {
     display: flex;
@@ -78,9 +69,9 @@
 <section class="scene">
   <section class="stats">
     <article>
-      <h2 tag="{{captured_id}}">Your Montser</h2>
-      <p id="cap-atk">Attack: {{captured_attack}}</p>
-      <p id="cap-hp">Health: {{captured_health}}</p>
+      <h2>Your Montser</h2>
+      <p id="my-atk">Attack: {{captured_attack}}</p>
+      <p id="my-hp">Health: {{captured_health}}</p>
     </article>
     <button id="atk-btn">ATTACK</button>
     <article class="opponent">
@@ -94,7 +85,6 @@
     <div class="monster monster-2"></div>
   </section>
 </section>
-
 <section id="backdrop">
   <article id="modal">
     <table>
@@ -108,4 +98,4 @@
     </table>
   </article>
 </section>
-<script src="/js/attackLoop.js"></script>
+<script src="/js/attackloop.js"></script>
