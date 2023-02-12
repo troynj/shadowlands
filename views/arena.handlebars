@@ -35,12 +35,12 @@
     background-image: url("/assets/grey.png");
   }
 
-  #attack-btn{
+  #atk-btn{
     padding: 2em;
     background-color: orangered;
   }
 
-    #attack-btn:hover{
+    #atk-btn:hover{
   
     background-color: rgb(255, 0, 0);
   }
@@ -49,14 +49,14 @@
   <section class="stats">
     <article>
       <h2>YOUR MONSTER</h2>
-      <p>Attack: {{captured_attack}}</p>
-      <p>Health: {{captured_health}}</p>
+      <p id="my-atk">Attack: {{captured_attack}}</p>
+      <p id="my-hp">Health: {{captured_health}}</p>
     </article>
-    <button id="attack-btn">ATTACK</button>
+    <button id="atk-btn">ATTACK</button>
     <article class="opponent">
       <h2>OPPONENT's MONSTER</h2>
-      <p>Attack: {{opponent_attack}}</p>
-      <p>Health: {{opponent_health}}</p>
+      <p id="opp-atk">Attack: {{opponent_attack}}</p>
+      <p id="opp-hp">Health: {{opponent_health}}</p>
     </article>
   </section>
   <section class="arena">
