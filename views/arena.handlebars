@@ -1,0 +1,66 @@
+<style>
+  .scene {
+    display: flex;
+    flex-direction: column;
+    margin: 5em;
+  }
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+  .arena {
+    border: 10px solid #fff;
+    margin: 50px auto;
+    padding: 30px;
+    width: 40%;
+    overflow: hidden;
+  }
+
+  /* Style the monsters */
+  .monster {
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: ' ';
+    height: 300px;
+    width: 100%;
+  }
+  .monster-1 {
+    background-image: url("/assets/green.png");
+  }
+
+  .monster-2 {
+    background-image: url("/assets/grey.png");
+  }
+
+  #attack-btn{
+    padding: 2em;
+    background-color: orangered;
+  }
+
+    #attack-btn:hover{
+  
+    background-color: rgb(255, 0, 0);
+  }
+</style>
+<section class="scene">
+  <section class="stats">
+    <article>
+      <h2>YOUR MONSTER</h2>
+      <p>Attack: {{captured_attack}}</p>
+      <p>Health: {{captured_health}}</p>
+    </article>
+    <button id="attack-btn">ATTACK</button>
+    <article class="opponent">
+      <h2>OPPONENT's MONSTER</h2>
+      <p>Attack: {{opponent_attack}}</p>
+      <p>Health: {{opponent_health}}</p>
+    </article>
+  </section>
+  <section class="arena">
+    <div class="monster monster-1"></div>
+    <div class="monster monster-2"></div>
+  </section>
+</section>

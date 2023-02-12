@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const {
+  Arena,
   Captured,
   Journey,
   Player,
@@ -13,11 +14,27 @@ router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { progress } = await Player.findByPk(id, { Player });
+    const { progress } = await Player.findByPk(3);
     // const {progress} = player.get({ plain: true });
-    console.log(progress);
+    console.log("progress", progress);
 
-    res.render(...renderGamestate(progress, id));
+    // html = "intro";
+    // data = {
+    //   intro,
+    //   wild_id: wilds[opponent].id,
+    //   beast_id: shadowbeasts[beast].id,
+    // };
+
+    // html = "Arena";
+    // data = ArenaData.get({ plain: true });
+
+    // html = "conc";
+    // data = { conc, stats };
+console.log("check this: ")
+const battleData = await renderGamestate(progress, id)
+console.log("Battle Data: ", ...battleData)
+    res.render(...battleData);
+    // res.render("arena", {progress})
   } catch (err) {
     res.status(500).json(err);
   }
@@ -52,10 +69,10 @@ async function renderGamestate(progress, p_id) {
       // );
 
       console.log("Entered Case 0");
-      console.log(p_id);
-      console.log(opponent);
-      console.log(shadowbeasts);
-
+      console.log("p_id", p_id);
+      console.log("opponent", opponent);
+      console.log("shadowbeat", shadowbeasts);
+      
       html = "intro";
       data = {
         intro,
@@ -64,24 +81,40 @@ async function renderGamestate(progress, p_id) {
       };
       //console.log({intro, wild_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id})
       break;
-
-    case 1:
-      const arenaData = await arena.findByPk(id);
-      html = "battle";
-      data = arenaData.get({ plain: true });
-
-      break;
-    case 2:
-      var { conc } = await Journey.findByPk(id);
-      const arenaConc = await arena.findByPk(id);
-      const stats = arenaConc.get({ plain: true });
-
-      html = "conc";
-      data = { conc, stats };
-      // console.log("Entered Case 2");
-      break;
+      
+      case 1:
+        //const arenaData = await Arena.findByPk(p_id);
+        //html = "arena";
+        //data = arenaData.get({ plain: true });
+        
+        html = "arena";
+        data = {
+          captured_attack: 123,
+          captured_health: 123,
+          opponent_attack: 123,
+          opponent_health: 123,
+        };
+        
+        console.log("Entered Case 1", data);
+        break;
+        case 2:
+          var { conc } = await Journey.findByPk(p_id);
+          // const arenaConc = await Arena.findByPk(p_id);
+          // const stats = arenaConc.get({ plain: true });
+          stats = {
+            captured_attack: 123,
+            captured_health: 123,
+            opponent_attack: 123,
+            opponent_health: 123,
+          };
+          html = "conc";
+          data = { conc, stats };
+          // console.log("Entered Case 2");
+          console.log("Entered Case 2", data);
+          break;
     default:
   }
+  // console.log( "return value: ", html.toString() , " + " , data, "||")
   return [html, data];
 }
 

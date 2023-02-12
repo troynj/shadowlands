@@ -7,17 +7,9 @@ Arena.init(
   {
     captured_attack: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'captured',
-        key: 'attack'
-      }
     },
     captured_health: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'captured',
-        key: 'health'
-      }
     },
     oponent_attack: {
       type: DataTypes.INTEGER,

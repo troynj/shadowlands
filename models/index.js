@@ -1,3 +1,4 @@
+const Arena = require("./Arena");
 const Captured = require("./Captured");
 const Journey = require("./Jorney");
 const Player = require("./Player");
@@ -97,4 +98,4 @@ Wild.belongsTo(Prototype, {
 //   foreignKey: 'opponent_id'
 // })
 
-module.exports = { Captured, Journey, Player, Prototype, ShadowBeast, User, Wild };
+module.exports = { Arena, Captured, Journey, Player, Prototype, ShadowBeast, User, Wild };
