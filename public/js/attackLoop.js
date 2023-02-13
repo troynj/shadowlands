@@ -56,6 +56,10 @@ function winner(monster) {
   const enemyType = document.getElementById("enemy").textContent
   if (monster === "opp") {
     updateProgress(5, 0);
+    const backdropEl = document.getElementById("loss-backdrop");
+  backdropEl.style.display = "flex";
+
+  document.getElementById("ctu").addEventListener('click', function() {document.location.reload()})
   } else if (enemyType === "Wild Monster") {
     updateProgress(5, 0);
     increaseStats();
@@ -63,11 +67,10 @@ function winner(monster) {
     updateProgress(5, 2);
     increaseStats();
   }
-  // document.location.reload();
 }
 
 function increaseStats() {
-  const backdropEl = document.getElementById("backdrop");
+  const backdropEl = document.getElementById("win-backdrop");
   backdropEl.style.display = "flex";
 
   document.querySelectorAll("#modal tr").forEach((el) => {
@@ -82,8 +85,9 @@ function increaseStats() {
           ? { attack: (5 + attack) }
           : { health: (5 + health) };
 
-      updateCaptured(capId, stat);
-      backdropEl.style.display = "none";
+      await updateCaptured(capId, stat);
+      // backdropEl.style.display = "none";
+      document.location.reload()
     });
   });
 }

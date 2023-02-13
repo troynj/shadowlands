@@ -50,7 +50,9 @@ router.put("/:id", async (req, res) => {
     }
 
     const updatedPlayer = await Player.findByPk(id);
-    console.log("updatedPlayer", updatedPlayer)
+    const test = updatedPlayer.get({plain: true})
+    console.log("updatedPlayer", test)
+    console.log("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     return res.status(200).json(updatedPlayer);
   } catch (err) {
     return res.status(400).json(err);

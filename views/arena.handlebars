@@ -46,7 +46,8 @@
     background-color: rgb(255, 0,
         0);
   }
-  #backdrop {
+  #win-backdrop,
+  #loss-backdrop {
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -95,15 +96,26 @@
   </section>
 </section>
 
-<section id="backdrop">
+<section id="win-backdrop">
   <article id="modal">
     <table>
-      <h2 tag="{{captured_id}}">Increase A Stat:</h2>
+      <h2 tag="{{captured_id}}">Winner!<br>Increase A Stat:</h2>
       <tr>
         <td id="atk">+5 Attach</td>
       </tr>
       <tr>
         <td id="hp">+5 Health</td>
+      </tr>
+    </table>
+  </article>
+</section>
+
+<section id="loss-backdrop">
+  <article id="modal">
+    <table>
+      <h2 tag="{{captured_id}}">You Lost</h2>
+      <tr>
+        <td id="ctu">Continue</td>
       </tr>
     </table>
   </article>
