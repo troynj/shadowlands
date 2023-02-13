@@ -1,23 +1,18 @@
-const attackBtn = document.getElementById("atk-btn");
+let attackBtn = document.getElementById("atk-btn");
+
 attackBtn.addEventListener("click", attack);
-const capAtk = document.getElementById("cap-atk");
-const capHp = document.getElementById("cap-hp");
-const oppAtk = document.getElementById("opp-atk");
-const oppHp = document.getElementById("opp-hp");
-let capAtkArr = capAtk.textContent.split(" ");
-let capHpArr = capHp.textContent.split(" ");
-let oppAtkArr = oppAtk.textContent.split(" ");
-let oppHpArr = oppHp.textContent.split(" ");
-const capOriginalA = Number(capAtkArr[1]);
-const capOriginalH = Number(capHpArr[1]);
 
 function attack() {
-  capAtkArr = capAtk.textContent.split(" ");
-  capHpArr = capHp.textContent.split(" ");
-  oppAtkArr = oppAtk.textContent.split(" ");
-  oppHpArr = oppHp.textContent.split(" ");
   attackBtn.removeEventListener("click", attack);
 
+  const capAtk = document.getElementById("cap-atk");
+  const capHp = document.getElementById("cap-hp");
+  const oppAtk = document.getElementById("opp-atk");
+  const oppHp = document.getElementById("opp-hp");
+  let capAtkArr = capAtk.textContent.split(" ");
+  let capHpArr = capHp.textContent.split(" ");
+  let oppAtkArr = oppAtk.textContent.split(" ");
+  let oppHpArr = oppHp.textContent.split(" ");
   let result;
 
   result = Number(oppHpArr[1]) - Number(capAtkArr[1]);
@@ -50,25 +45,24 @@ function attack() {
       document.body.style.backgroundColor = "";
       capHp.style.fontSize = "100%";
       attackBtn.addEventListener("click", attack);
+      capHp.style.fontSize = "100%";
+      attackBtn.addEventListener("click", attack);
     }, 500);
   }, 2000);
 }
 
+  // document.location.reload();
 function winner(monster) {
-  console.log(monster);
-  const enemyType = document.getElementById("enemy").textContent;
-
+  const enemyType = document.getElementById("enemy").textContent
   if (monster === "opp") {
-    console.log("Entered 1");
-    // updateProgress(5, 0);
-  } else if (enemyType == "Wild Monster") {
-    // updateProgress(5, 0);
+    updateProgress(5, 0);
+  } else if (enemyType === "Wild Monster") {
+    updateProgress(5, 0);
     increaseStats();
   } else if (enemyType === "Beast Monster") {
-    // updateProgress(5, 2);
+    updateProgress(5, 2);
     increaseStats();
   }
-
   // document.location.reload();
 }
 
@@ -79,36 +73,50 @@ function increaseStats() {
   document.querySelectorAll("#modal tr").forEach((el) => {
     el.addEventListener("click", async function (event) {
       // event.preventDefault();
-      const capMonId = document.querySelector("[tag]").getAttribute("tag");
+      const capId = document.querySelector("[tag]").getAttribute("tag");
+      let{attack, health} = await getCapDBStats(capId)
+      // console.log(capADB)
+      // console.log(capHDB)
       const stat =
         event.target.id === "atk"
-          ? { attack: 5 + capOriginalA }
-          : { health: 5 + capOriginalH };
+          ? { attack: (5 + attack) }
+          : { health: (5 + health) };
 
-      updateCaptured(capMonId, stat);
+      updateCaptured(capId, stat);
       backdropEl.style.display = "none";
     });
   });
 }
 
-// async function updateProgress(id, { result } ) {
-//   const response = await fetch(`/api/player/${id}`, {
-//     method: "PUT",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(result),
-//   });
+async function getCapDBStats(id) {
+  const response = await fetch(`/api/captured/${id}` , {
+    method:'GET',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  return {attack, health} = await response.json()
+}
 
-//   if (response.ok) {
-//     const data = await response.json();
-//     console.log("Player progress update successful:", data);
-//   } else {
-//     console.error("Error updating comment:", response.statusText);
-//   }
-// }
+async function updateProgress(id, progress) {
+  const response = await fetch(`/api/player/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({progress}),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    console.log("Player progress update successful:", data);
+  } else {
+    console.error("Error updating comment:", response.statusText);
+  }
+}
 
 async function updateCaptured(id, stat) {
+  console.log("line 117",stat)
   const response = await fetch(`/api/captured/${id}`, {
     method: "PUT",
     headers: {
@@ -127,11 +135,3 @@ async function updateCaptured(id, stat) {
     );
   }
 }
-
-//   if (response.ok) {
-//     const data = await response.json();
-//     console.log("Player progress update successful:", data);
-//   } else {
-//     console.error("Error updating comment:", response.statusText);
-//   }
-// }

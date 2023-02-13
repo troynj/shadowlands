@@ -14,7 +14,7 @@ console.log(" FILE ------ controllers/api/arena.js ---------")
 router.get("/", async (req, res) => {
   try {
     const arenaArr = await Arena.findAll();
-    // const arena = arenaArr.map((arena) => arena.get({ plain: true }));
+    const arena = arenaArr.map((arena) => arena.get({ plain: true }));
 
     res.status(200).json(arenaArr);
   } catch (err) {

@@ -90,9 +90,9 @@ async function renderGamestate(progress, p_id) {
         //html = "arena";
         //data = arenaData.get({ plain: true });
         
-      const monster = await Arena.findByPk(1)
+      const arenaArr = await Arena.findAll()
       html ="arena"
-      data = monster.get({plain:true})
+      data = arenaArr[arenaArr.length - 1].get({plain:true})
         
         console.log("Entered Case 1", data);
         break;
