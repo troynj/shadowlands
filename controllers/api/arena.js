@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
+
 const {
   Arena,
   Captured,
@@ -39,7 +41,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   console.log("FUNCTION -------- post - api/ -------------")
   try {
     const { type } = req.body;
@@ -86,7 +88,7 @@ console.log("playerData: plain:false", playerData)
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   // update an arena by its `id` value
   try {
     const { id } = req.params;
@@ -108,7 +110,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   // delete an arena by its `id` value
   try {
     // Delete the arena with the given `id` from the database
