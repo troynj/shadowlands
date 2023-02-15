@@ -1,7 +1,9 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
+
 const { Captured, Journey, Player, Prototype, User, Wild } = require("../../models");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const wildArr = await Wild.findAll();
     // const captured = capturedArr.map((captured) => captured.get({ plain: true }));
@@ -12,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   const { id } = req.params;
   console.log(req.params.id);
   try {
@@ -31,7 +33,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newWild = await Wild.create(req.body);
     res.status(200).json(newWild);
@@ -40,7 +42,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   // update a category by its `id` value
   try {
     const { id } = req.params;
@@ -61,7 +63,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   // delete a category by its `id` value
   try {
     // Delete the tag with the given `id` from the database

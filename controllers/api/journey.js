@@ -1,7 +1,9 @@
 const router = require("express").Router();
+const withAuth = require('../../utils/auth');
+
 const { Captured, Journey, Player, Prototype, User, Wild } = require("../../models");
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const JourneyArr = await Journey.findAll();
     // const captured = capturedArr.map((captured) => captured.get({ plain: true }));
@@ -13,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   const { id } = req.params;
   console.log(req.params.id);
   try {
@@ -32,7 +34,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newJourney = await Journey.create(req.body);
     res.status(200).json(newJourney);
@@ -41,7 +43,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newJourney = await Journey.create(req.body);
     res.status(200).json(newJourney);
@@ -50,7 +52,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const [updated] = await Journey.update(req.body, { where: { id }});
@@ -68,7 +70,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   // delete a Journey by its `id` value
   try {
     // Delete the Journey with the given `id` from the database

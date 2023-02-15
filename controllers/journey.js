@@ -1,4 +1,6 @@
 const router = require("express").Router();
+const withAuth = require('../utils/auth');
+
 const {
   Arena,
   Captured,
@@ -10,7 +12,7 @@ const {
   Wild,
 } = require("../models");
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const battleData = await renderGamestate(id);

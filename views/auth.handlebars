@@ -1,0 +1,59 @@
+<style>
+  .form {
+    display: none;
+  }
+
+  .show {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 10em;
+  }
+
+  section {
+    margin: 5em;
+  }
+</style>
+
+<section>
+  <button id="signin-btn">Sign In</button>
+  <button id="signup-btn">Sign Up</button>
+  <article>
+    <form id="signin-form" class="form show">
+      <input type="name" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button type="submit">Submit</button>
+    </form>
+  </article>
+  <article>
+    <form id="signup-form" class="form">
+      <input type="name" placeholder="Username" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+      <input type="confirm-password" placeholder="Confirm Password" />
+      <button type="submit">Submit</button>
+    </form>
+  </article>
+</section>
+
+<script>
+  const signinBtn = document.querySelector("#signin-btn");
+  const signupBtn = document.querySelector("#signup-btn");
+  const signinForm = document.querySelector("#signin-form");
+  const signupForm = document.querySelector("#signup-form");
+  const [siBtn, suBtn] = document.querySelectorAll('button[type="submit"]')
+
+  signinBtn.addEventListener("click", function () {
+    signinForm.classList.add("show");
+    signupForm.classList.remove("show");
+  });
+
+  signupBtn.addEventListener("click", function () {
+    signupForm.classList.add("show");
+    signinForm.classList.remove("show");
+  });
+</script>
