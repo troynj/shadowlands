@@ -34,6 +34,7 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 router.post("/", withAuth, async (req, res) => {
+// router.post("/", withAuth, async (req, res) => {
   try {
     const newPrototype = await Prototype.create(req.body);
     res.status(200).json(newPrototype);
@@ -43,6 +44,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 router.put("/:id", withAuth, async (req, res) => {
+// router.put("/:id", withAuth, async (req, res) => {
   // update a category by its `id` value
   try {
     const { id } = req.params;
@@ -62,6 +64,7 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 router.delete("/:id", withAuth, async (req, res) => {
+// router.delete("/:id", withAuth, async (req, res) => {
   // delete a prototype by its `id` value
   try {
     // Delete the prototype with the given `id` from the database

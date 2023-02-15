@@ -13,15 +13,16 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
       if (userInput.value) {Player.create(userInput.value)
       document.location.reload()
     }
-      else {
-        userInput.style = "outline: 2px solid red;"
-      }
-    })
-  }
-  if (type === "Load") {
-    //req.sess
-  }
-  if (type === "Delete") {
-    Player.delete(player_id);
+    else {
+      userInput.style = "outline: 2px solid red;"
+    }
+  })
+}
+if (type === "Load") {
+  //req.sess
+}
+if (type === "Delete") {
+  Player.delete(player_id);
+  document.location.reload()
   }
 });})

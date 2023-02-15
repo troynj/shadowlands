@@ -25,10 +25,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exp = require('constants')
 
 const sess = {
-  secret: 'Project Panda',
+  secret: 'secret secret',
   cookie: {
     maxAge: 86400,
   },
+  SameSite: "none",
   resave: false, 
   saveUninitialized: true,
   store: new SequelizeStore({

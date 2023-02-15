@@ -4,6 +4,7 @@ const withAuth = require('../../utils/auth');
 const { Captured, Journey, Player, Prototype, User, Wild } = require("../../models");
 
 router.get("/", withAuth, async (req, res) => {
+// router.get("/", withAuth, async (req, res) => {
   try {
     const playerArr = await Player.findAll();
     // const captured = capturedArr.map((captured) => captured.get({ plain: true }));

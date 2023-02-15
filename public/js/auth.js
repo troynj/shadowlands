@@ -26,16 +26,7 @@ siBtn.addEventListener('submit', async function(event) {
 
   if (password !== cpassword)return
 
-    const response = await fetch('/api/user', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      })
-    });
+  const response = User.create({username, password})
 
     if (response.ok) {
       const data = await response.json();
@@ -45,21 +36,15 @@ siBtn.addEventListener('submit', async function(event) {
     }
 }
 )
+
 siBtn.addEventListener('submit', async function(event) {
   event.preventDefault()
   const username = document.querySelector('input type="name"')
   const password = document.querySelector('input type="password"')
 
-    const response = await fetch('/api/user', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      })
-    });
+
+User.create({username, password})
+
 
     if (response.ok) {
       const data = await response.json();

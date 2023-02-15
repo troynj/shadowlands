@@ -13,7 +13,7 @@ const {
 } = require("../../models");
 console.log(" FILE ------ controllers/api/arena.js ---------")
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const arenaArr = await Arena.findAll();
     const arena = arenaArr.map((arena) => arena.get({ plain: true }));
@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   const { id } = req.params;
   console.log(req.params.id);
   try {

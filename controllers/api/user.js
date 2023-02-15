@@ -3,6 +3,7 @@ const withAuth = require('../../utils/auth');
 
 const { Captured, Journey, Player, Prototype, User, Wild } = require("../../models");
 
+// router.get("/", withAuth, async (req, res) => {
 router.get("/", withAuth, async (req, res) => {
   try {
     const UserArr = await User.findAll();
@@ -15,6 +16,7 @@ router.get("/", withAuth, async (req, res) => {
 });
 
 router.get("/:id", withAuth, async (req, res) => {
+// router.get("/:id", withAuth, async (req, res) => {
   const { id } = req.params;
   try {
     const userArr = await User.findByPk(id);
@@ -30,6 +32,7 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 router.post("/", withAuth, async (req, res) => {
+// router.post("/", withAuth, async (req, res) => {
   try {
     const newUser = await User.create(req.body);
     res.status(200).json(newUser);
@@ -46,6 +49,7 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 router.put("/:id", withAuth, async (req, res) => {
+// router.put("/:id", withAuth, async (req, res) => {
   // update a category by its `id` value
   try {
     const { id } = req.params;
@@ -63,6 +67,7 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 router.delete("/:id", withAuth, async (req, res) => {
+// router.delete("/:id", withAuth, async (req, res) => {
   // delete a User by its `id` value
   try {
     // Delete the User with the given `id` from the database

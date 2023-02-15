@@ -3,7 +3,7 @@ const withAuth = require('../../utils/auth');
 
 const { Arena, Captured, Journey, Player, Prototype, ShadowBeast, User, Wild } = require("../../models");
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({ where: { email: req.body.email } });

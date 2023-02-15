@@ -11,6 +11,6 @@ router.use("/Dashboard", dashboard)
 router.use("/Journey", journey)
 router.use("/About", dashboard)
 router.use("/api", api)
-router.use("/auth", auth)
+router.use("/Auth", auth)
 
 module.exports = router;
