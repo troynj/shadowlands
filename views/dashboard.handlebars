@@ -1,3 +1,4 @@
+<button class="action">New Game</button>
 <section class="dash">
   <table class="saved-games">
     <tr>
@@ -12,4 +13,16 @@
 {{/each}}
   </table>
 </section>
-<script src="/public/js/dashboard.js"></script>
+
+<section class="hide" id="backdrop">
+  <section id="modal">
+    <button id="close">X</button>
+    <h3>Create A Player</h3>
+    <label for="player-name">Player Name: </label>
+      <input type="text" id="player-name" name="confirm-password" placeholder="Enter Name">
+<button id="create">Create Player</button>
+  </section>
+</section>
+<script src="/js/dashboard.js"></script>
+<script src="/js/fetch/player.js"></script>
+<link rel="stylesheet" href="/css/dashboard.css">

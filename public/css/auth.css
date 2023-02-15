@@ -1,0 +1,294 @@
+:root {
+  --primary-color: #00bfa5;
+  --secondary-color: #1c1c1c;
+  --tertiary-color: #f44336;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 50px;
+  background-color: #272727;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.has-green-border {
+  border-bottom: 2px solid green;
+}
+
+.has-red-border {
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.has-yellow-border {
+  border-bottom: 2px solid yellow;
+}
+
+.has-green-border:focus {
+  border-bottom: 2px solid green;
+}
+
+.has-red-border:focus {
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.has-yellow-border:focus {
+  border-bottom: 2px solid yellow;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #007d71;
+}
+
+.error-message {
+  color: var(--tertiary-color);
+  margin-top: 5px;
+  font-size: 14px;
+  display: none;
+}
+
+.has-error .error-message {
+  display: block;
+}
+
+.has-success .input-field::after {
+  content: "\2714";
+  color: green;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+.has-error .input-field::after {
+  content: "\2718";
+  color: var(--tertiary-color);
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input,
+  label {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+:root {
+  --primary-color: #00bfa5;
+  --secondary-color: #1c1c1c;
+  --tertiary-color: #f44336;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 50px;
+  background-color: #272727;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.has-green-border {
+  border-bottom: 2px solid green;
+}
+
+.has-red-border {
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.has-yellow-border {
+  border-bottom: 2px solid yellow;
+}
+
+.has-green-border:focus {
+  border-bottom: 2px solid green;
+}
+
+.has-red-border:focus {
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.has-yellow-border:focus {
+  border-bottom: 2px solid yellow;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #007d71;
+}
+
+.error-message {
+  color: var(--tertiary-color);
+  margin-top: 5px;
+  font-size: 14px;
+  display: none;
+}
+
+.has-error .error-message {
+  display: block;
+}
+
+.has-success .input-field::after {
+  content: "\2714";
+  color: green;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+.has-error .input-field::after {
+  content: "\2718";
+  color: var(--tertiary-color);
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input,
+  label {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
