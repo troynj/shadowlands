@@ -1,3 +1,35 @@
+
+.dash {
+  display: flex;
+  justify-content: center;
+  margin: 10%;
+  /* height: 100vh; */
+}
+
+.dash table {
+  border-collapse: collapse;
+}
+.dash th,
+.dash td {
+  border: 1px solid var(--accent-color);
+  padding: 8px;
+  text-align: left;
+}
+.dash th {
+  background-color: var(--primary-color);
+  color: var(--dark-font);
+}
+/* .dash td {
+  transition: 0.1s ease-in;
+} */
+.dash tr:hover {
+  background-color: var(--contrast-color);
+}
+
+.dash a:hover{
+  color: purple;
+}
+
 #backdrop {
 
   top: 0;

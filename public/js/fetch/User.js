@@ -17,27 +17,8 @@ const User = {
     });
   },
 
-  create: async function (credentials) {
-
-    const response = await fetch("/api/player", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      //req.sess
-      body: JSON.stringify({credentials }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      console.log("User added successfully:", data);
-    } else {
-      console.error("Error adding User:", response.statusText);
-    }
-  },
-
   update: async function(id, parameter) {
-    const response = await fetch(`/api/player/${id}`, {
+    const response = await fetch(`/api/user/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +35,7 @@ const User = {
   },
 
   delete: async function (id) {
-    const response = await fetch(`/api/player/${id}`, {
+    const response = await fetch(`/api/user/${id}`, {
       method: "DELETE",
     });
 

@@ -10,7 +10,7 @@ const {
   Wild,
 } = require("../models");
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const { id } = req.params;
 

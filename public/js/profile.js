@@ -18,11 +18,13 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
     }
   })
 }
-if (type === "Load") {
+else if(type === "Load") {
+  console.log(event.target)
   //req.sess
 }
-if (type === "Delete") {
+else if (type === "Delete") {
   Player.delete(player_id);
   document.location.reload()
   }
+  else {console.log("error in selecting action")}
 });})
