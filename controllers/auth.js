@@ -20,5 +20,14 @@ router.get('/SignUp', (req, res) => {
   res.render('signUp');
 });
 
+router.get('/SignOut', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.render('signIn')
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;

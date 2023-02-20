@@ -8,7 +8,7 @@ router.get("/", withAuth, async (req, res) => {
     const wildArr = await Wild.findAll();
     // const captured = capturedArr.map((captured) => captured.get({ plain: true }));
 
-    res.render('landing', wildArr);
+    res.render('landing', {wildArr, loggedIn : req.session.loggedIn});
   } catch (err) {
     res.status(500).json(err);
   }

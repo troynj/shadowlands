@@ -1,10 +1,11 @@
 async function createArena(type, id) {
+  let playerID = localStorage.getItem("playerID")
   const response = await fetch(`/api/arena/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ type, id }),
+    body: JSON.stringify({ type, id, playerID }),
   });
 
   if (response.ok) {
@@ -42,7 +43,7 @@ document.querySelectorAll("button").forEach((btn) =>
     console.log("name", name)
     console.log("id", id)
     await createArena(name, id)
-    await updateProgress(5)
+    await updateProgress(localStorage.get("playerID"))
     document.location.reload();
   })
 );

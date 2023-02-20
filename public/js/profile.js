@@ -19,8 +19,8 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
   })
 }
 else if(type === "Load") {
-  console.log(event.target)
-  //req.sess
+  console.log(event.target.getAttribute("player"))
+  localStorage.setItem("playerID", event.target.getAttribute("player"))
 }
 else if (type === "Delete") {
   Player.delete(player_id);

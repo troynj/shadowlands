@@ -5,8 +5,8 @@ async function updateLocation() {
   const journey_id = urlArr[urlArr.length - 1]
   const next = Number(journey_id) + 1
 //req.session
-const ses = 5
-  const response = await fetch(`/api/player/${ses}`, {
+const playerID = localStorage.getItem("playerID")
+  const response = await fetch(`/api/player/${playerID}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

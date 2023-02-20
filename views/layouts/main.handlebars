@@ -15,7 +15,21 @@
 <body>
 
   <head>
-    {{> navbar}}
+  <header>
+  <h1>SHADOWLANDS</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/Dashboard/1">Dashboard</a></li>
+      <li><a href="/Journey/1">About</a></li>
+      {{#if loggedIn}}
+        <li><a href="/Auth/SignOut" id="signout" class="btn-no-style">Sign Out</a></li>
+      {{else}}
+        <li><a href="/Auth/SignIn">Sign In</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</header>
   </head>
   <main>
     {{{body}}}

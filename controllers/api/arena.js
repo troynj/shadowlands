@@ -44,9 +44,9 @@ router.get("/:id", withAuth, async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   console.log("FUNCTION -------- post - api/ -------------")
   try {
-    const { type } = req.body;
+    // const {  } = req.body;
     console.log("line 46 - type: (Wild/Beast)", type)
-    const { id } = req.body;
+    const { id, type, playerID } = req.body;
     const opponent =
       type === "Wild"
         ? await Wild.findByPk(id)
@@ -60,8 +60,8 @@ console.log("opponent: plain:false", opponent)
     console.log("------opp: plain:true ----", opponent)
 
     // const playerData = await Player.findByPk(req.session.player.id, {
-    const playerData = await Player.findByPk(5, {
-      include: [{ model: Captured, where: { id: 5 } }],
+    const playerData = await Player.findByPk(playerID, {
+      include: [{ model: Captured, where: { id: playerID } }],
     });
 console.log("playerData: plain:false", playerData)
     if(!playerData) {

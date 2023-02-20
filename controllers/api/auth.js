@@ -63,7 +63,7 @@ router.put('/SignIn', async (req, res) => {
 });
 
 router.post('/SignOut', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });

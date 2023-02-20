@@ -28,9 +28,9 @@ async function renderGamestate(p_id) {
   let html;
   let data;
   //rec.session.id
-  const { progress, captured } = await Player.findByPk(5, {
+  const { progress, captured } = await Player.findByPk(p_id, {
     //rec.session.id
-    include: [{ model: Captured, where: { player_id: 5 } }],
+    include: [{ model: Captured, where: { player_id: p_id } }],
   });
 const cap = captured.get({plain : true})
 

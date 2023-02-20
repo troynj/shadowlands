@@ -1,5 +1,5 @@
 let attackBtn = document.getElementById("atk-btn");
-
+const playerID = localStorage.getItem("playerID")
 attackBtn.addEventListener("click", attack);
 
 function attack() {

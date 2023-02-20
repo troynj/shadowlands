@@ -12,5 +12,5 @@ async function submitCredentials(event) {
   console.log("password", password);
 
   await Auth.SignIn(email, password);
-  //  document.location.replace('/');
+  document.location.replace('/');
 };
