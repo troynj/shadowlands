@@ -1,5 +1,5 @@
 async function createArena(type, id) {
-  let playerID = localStorage.getItem("playerID")
+  let playerID = parseInt(localStorage.getItem("playerID"))
   const response = await fetch(`/api/arena/`, {
     method: "POST",
     headers: {
@@ -38,12 +38,13 @@ async function updateProgress(id) {
 //create arena
 document.querySelectorAll("button").forEach((btn) =>
   btn.addEventListener("click", async function (event) {
+    const playerID = parseInt(localStorage.getItem("playerID"))
     const { name, id } = event.target
     console.log(event.target)
     console.log("name", name)
     console.log("id", id)
     await createArena(name, id)
-    await updateProgress(localStorage.get("playerID"))
+    await updateProgress(playerID)
     document.location.reload();
   })
 );

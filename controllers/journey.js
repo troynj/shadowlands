@@ -15,8 +15,11 @@ const {
 router.get("/:id", withAuth, async (req, res) => {
 // router.get("/:id", withAuth, async (req, res) => {
   try {
+    // const { playerID } = req.body
     const { id } = req.params;
-    const battleData = await renderGamestate(id);
+    const playerID = req.session.playerID
+    console.log("Inside Journey, req.session: ", playerID)
+    const battleData = await renderGamestate(id, playerID);
     // console.log("Battle Data: ", ...battleData)
     res.render(...battleData);
   } catch (err) {
@@ -24,13 +27,13 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-async function renderGamestate(p_id) {
+async function renderGamestate(p_id, playerID) {
   let html;
   let data;
-  //rec.session.id
-  const { progress, captured } = await Player.findByPk(p_id, {
+  
+  const { progress, captured } = await Player.findByPk(playerID, {
     //rec.session.id
-    include: [{ model: Captured, where: { player_id: p_id } }],
+    include: [{ model: Captured, where: { player_id: playerID } }],
   });
 const cap = captured.get({plain : true})
 

@@ -25,18 +25,18 @@ const session = require("express-session");
 // Import the "connect-session-sequelize" module
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// Configure the session store
+// Define a session configuration object
 const sess = {
-  secret: "Super secret secret",
+  secret: "Super secret secret", // This property specifies the secret used to sign the session ID cookie. It should be a string that is kept secret.
   cookie: {
-    maxAge: 86400,
+  maxAge: 86400, // This property specifies the maximum age of the session cookie in milliseconds. In this case, it's set to 1 day (86400 seconds).
   },
-  resave: false,
-  saveUninitialized: false,
-  store: new SequelizeStore({
-    db: sequelize,
+  resave: false, // This property determines whether the session will be saved to the session store on every request, even if the session data has not changed. Setting it to false helps to optimize performance.
+  saveUninitialized: false, // This property determines whether a new, uninitialized session will be saved to the session store. Setting it to false helps to comply with privacy laws and improves performance.
+  store: new SequelizeStore({ // This property specifies the session store where the session data will be persisted. In this case, it's using Sequelize as the store.
+  db: sequelize, // This property specifies the Sequelize database instance to use as the session store.
   }),
-};
+  };
 
 // Use the session middleware
 app.use(session(sess));

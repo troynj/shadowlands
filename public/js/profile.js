@@ -19,8 +19,14 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
   })
 }
 else if(type === "Load") {
-  console.log(event.target.getAttribute("player"))
-  localStorage.setItem("playerID", event.target.getAttribute("player"))
+  // console.log(event.target.getAttribute("player"))
+  
+  const playerID = event.target.getAttribute("player")
+  const journeyID = event.target.getAttribute("journey")
+  localStorage.setItem("playerID", playerID)
+  Load.update(playerID)
+  document.location.replace(`../Journey/${journeyID}`)
+
 }
 else if (type === "Delete") {
   Player.delete(player_id);

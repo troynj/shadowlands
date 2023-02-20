@@ -1,5 +1,14 @@
 const Player = {
-  create: async function (name) {
+getOne: async function (id) {
+  const response = await fetch(`/api/player/${id}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    //req.sess
+  });
+},
+  create: async function (userID, name) {
 
     const response = await fetch("/api/player", {
       method: "POST",
@@ -11,7 +20,7 @@ const Player = {
         name: name,
         progress: 0,
         journey_id: 1,
-        user_id: localStorage.getItem("playerID")
+        user_id: 1
       }),
     });
 

@@ -1,5 +1,4 @@
 let attackBtn = document.getElementById("atk-btn");
-const playerID = localStorage.getItem("playerID")
 attackBtn.addEventListener("click", attack);
 
 function attack() {
@@ -53,18 +52,19 @@ function attack() {
 
   // document.location.reload();
 function winner(monster) {
+  const playerID = parseInt(localStorage.getItem("playerID"))
   const enemyType = document.getElementById("enemy").textContent
   if (monster === "opp") {
-    updateProgress(5, 0);
+    updateProgress(playerID, 0);
     const backdropEl = document.getElementById("loss-backdrop");
   backdropEl.style.display = "flex";
 
   document.getElementById("ctu").addEventListener('click', function() {document.location.reload()})
   } else if (enemyType === "Wild Monster") {
-    updateProgress(5, 0);
+    updateProgress(playerID, 0);
     increaseStats();
   } else if (enemyType === "Beast Monster") {
-    updateProgress(5, 2);
+    updateProgress(playerID, 2);
     increaseStats();
   }
 }
