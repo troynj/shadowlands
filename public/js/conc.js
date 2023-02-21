@@ -5,7 +5,7 @@ async function updateLocation() {
   const journey_id = urlArr[urlArr.length - 1]
   const next = Number(journey_id) + 1
 //req.session
-const playerID = localStorage.getItem("playerID")
+const playerID = parseInt(localStorage.getItem("playerID"))
   const response = await fetch(`/api/player/${playerID}`, {
     method: "PUT",
     headers: {
@@ -19,7 +19,7 @@ const playerID = localStorage.getItem("playerID")
     document.location.replace(`http://localhost:3001/Journey/${next}`)
   } else {
     console.error(
-      "Error updating player's stast:",
+      "Error updating player's stats:",
       response.statusText
     );
   }

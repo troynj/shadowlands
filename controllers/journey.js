@@ -17,8 +17,8 @@ router.get("/:id", withAuth, async (req, res) => {
   try {
     // const { playerID } = req.body
     const { id } = req.params;
-    const playerID = req.session.playerID
-    console.log("Inside Journey, req.session: ", playerID)
+    const playerID = req.session
+    console.log("Inside Journey, req.session: ", req.session)
     const battleData = await renderGamestate(id, playerID);
     // console.log("Battle Data: ", ...battleData)
     res.render(...battleData);
@@ -27,7 +27,7 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-async function renderGamestate(p_id, playerID) {
+async function renderGamestate(locationID, playerID) {
   let html;
   let data;
   
@@ -43,10 +43,10 @@ const cap = captured.get({plain : true})
       //get the current journey its associated data
       //associated data: intro description
       //associated data: wild monster array
-      const introData = await Journey.findByPk(p_id, {
+      const introData = await Journey.findByPk(locationID, {
         include: [
-          { model: Wild, where: { journey_id: p_id } },
-          { model: ShadowBeast, where: { journey_id: p_id } },
+          { model: Wild, where: { journey_id: locationID } },
+          { model: ShadowBeast, where: { journey_id: locationID } },
         ],
       });
       const { intro, wilds, shadowbeasts } = introData.get({ plain: true });
@@ -58,11 +58,11 @@ const cap = captured.get({plain : true})
       //update table attributes
       // await Journey.update(
       //   { opponent_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id },
-      //   { where: { id: p_id } }
+      //   { where: { id: locationID } }
       // );
 
       console.log("Entered Case 0");
-      console.log("p_id", p_id);
+      console.log("locationID", locationID);
       console.log("opponent", opponent);
       console.log("shadowbeat", shadowbeasts);
 
@@ -76,7 +76,7 @@ const cap = captured.get({plain : true})
       break;
 
     case 1:
-      //const arenaData = await Arena.findByPk(p_id);
+      //const arenaData = await Arena.findByPk(locationID);
       //html = "arena";
       //data = arenaData.get({ plain: true });
 
@@ -87,7 +87,7 @@ const cap = captured.get({plain : true})
       console.log("Entered Case 1", data);
       break;
     case 2:
-      var { conc } = await Journey.findByPk(p_id);
+      var { conc } = await Journey.findByPk(locationID);
 
       html = "conc";
       data = { conc, cap };

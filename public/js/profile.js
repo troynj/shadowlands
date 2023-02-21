@@ -10,7 +10,8 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
     backdropEl.classList.remove('show');})
     document.querySelector("#create").addEventListener("click", function() {
       const userInput = document.querySelector('input[id="player-name"]') 
-      if (userInput.value) {Player.create(userInput.value)
+      const userId = document.querySelector("h1").getAttribute("id")
+      if (userInput.value) {Player.create(userId, userInput.value)
       document.location.reload()
     }
     else {
@@ -21,9 +22,10 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
 else if(type === "Load") {
   // console.log(event.target.getAttribute("player"))
   
-  const playerID = event.target.getAttribute("player")
+  const playerID = parseInt(event.target.getAttribute("player"))
   const journeyID = event.target.getAttribute("journey")
   localStorage.setItem("playerID", playerID)
+  console.log(playerID)
   Load.update(playerID)
   document.location.replace(`../Journey/${journeyID}`)
 

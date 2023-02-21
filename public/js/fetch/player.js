@@ -26,7 +26,6 @@ getOne: async function (id) {
 
     if (response.ok) {
       const data = await response.json();
-      this.id = data.id;
       console.log("Player added successfully:", data);
     } else {
       console.error("Error adding Player:", response.statusText);

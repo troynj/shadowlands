@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User} = require("../../models");
 
 router.post("/", async (req, res) => {
-  console.log("req.body", req.body)
+  // console.log("req.body", req.body)
   const { playerID } =  req.body 
   // router.post("/", withAuth, async (req, res) => {
     try {
