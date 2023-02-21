@@ -20,7 +20,7 @@ getOne: async function (id) {
         name: name,
         progress: 0,
         journey_id: 1,
-        user_id: 1
+        user_id: userID,
       }),
     });
 

@@ -11,6 +11,7 @@ const Load = {
     if (response.ok) {
       const data = await response.json();
       console.log("Player update successful:", data);
+      return data
     } else {
       console.error("Error updating Player:", response.statusText);
     }

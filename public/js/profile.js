@@ -1,4 +1,4 @@
-document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", function (event) {
+document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", async function (event) {
   const player_id = event.target.getAttribute("player")
   const type = event.target.textContent
   if (type === "New Game") {
@@ -22,11 +22,12 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
 else if(type === "Load") {
   // console.log(event.target.getAttribute("player"))
   
-  const playerID = parseInt(event.target.getAttribute("player"))
+  const playerID = event.target.getAttribute("player")
   const journeyID = event.target.getAttribute("journey")
   localStorage.setItem("playerID", playerID)
   console.log(playerID)
-  Load.update(playerID)
+  await Player.update(playerID, 0)
+  await Load.update(playerID)
   document.location.replace(`../Journey/${journeyID}`)
 
 }

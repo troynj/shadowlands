@@ -15,11 +15,10 @@ const {
 router.get("/:id", withAuth, async (req, res) => {
 // router.get("/:id", withAuth, async (req, res) => {
   try {
+    console.log("ENTERED JOURNEY")
     // const { playerID } = req.body
     const { id } = req.params;
-    const playerID = req.session
-    console.log("Inside Journey, req.session: ", req.session)
-    const battleData = await renderGamestate(id, playerID);
+    const battleData = await renderGamestate(id);
     // console.log("Battle Data: ", ...battleData)
     res.render(...battleData);
   } catch (err) {
@@ -27,10 +26,13 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-async function renderGamestate(locationID, playerID) {
+async function renderGamestate(locationID) {
+  console.log("ENTERED JOURNEY renderGamestate")
+  console.log("Inside Journey, req.session: ", req.session)
   let html;
   let data;
   
+  const { playerID } = req.session
   const { progress, captured } = await Player.findByPk(playerID, {
     //rec.session.id
     include: [{ model: Captured, where: { player_id: playerID } }],
@@ -61,10 +63,10 @@ const cap = captured.get({plain : true})
       //   { where: { id: locationID } }
       // );
 
-      console.log("Entered Case 0");
-      console.log("locationID", locationID);
-      console.log("opponent", opponent);
-      console.log("shadowbeat", shadowbeasts);
+      // console.log("Entered Case 0");
+      // console.log("locationID", locationID);
+      // console.log("opponent", opponent);
+      // console.log("shadowbeat", shadowbeasts);
 
       html = "intro";
       data = {

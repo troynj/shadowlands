@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
           // Create session variables based on the logged in user
           req.session.save(() => {
             req.session.playerID = playerID
-            console.log("req.session: ", req.session)
+            // console.log("req.session: ", req.session)
             res.status(200).json(playerID);
           });
         } catch (err) {
