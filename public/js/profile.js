@@ -1,4 +1,4 @@
-document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", function (event) {
+document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", async function (event) {
   const player_id = event.target.getAttribute("player")
   const type = event.target.textContent
   if (type === "New Game") {
@@ -9,8 +9,9 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
   document.querySelector("#close").addEventListener("click", function() {backdropEl.classList.add('hide');
     backdropEl.classList.remove('show');})
     document.querySelector("#create").addEventListener("click", function() {
+      const playerIdEl = document.querySelector("h1").getAttribute('id') 
       const userInput = document.querySelector('input[id="player-name"]') 
-      if (userInput.value) {Player.create(userInput.value)
+      if (userInput.value) {Player.create(playerIdEl, userInput.value)
       document.location.reload()
     }
     else {
@@ -24,7 +25,8 @@ else if(type === "Load") {
   const playerID = event.target.getAttribute("player")
   const journeyID = event.target.getAttribute("journey")
   localStorage.setItem("playerID", playerID)
-  Load.update(playerID)
+  await Load.update(playerID)
+  await Player.update(playerID, 0)
   document.location.replace(`../Journey/${journeyID}`)
 
 }

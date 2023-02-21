@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const withAuth = require('../utils/auth');
+const withAuth = require("../utils/auth");
 
 const {
   Arena,
@@ -13,29 +13,31 @@ const {
 } = require("../models");
 
 router.get("/:id", withAuth, async (req, res) => {
-// router.get("/:id", withAuth, async (req, res) => {
   try {
-    // const { playerID } = req.body
     const { id } = req.params;
-    const playerID = req.session.playerID
-    console.log("Inside Journey, req.session: ", playerID)
+    console.log("id: ", id);
+    const { playerID } = req.session;
+    console.log("Inside Journey, req.session.playerID: ", playerID);
     const battleData = await renderGamestate(id, playerID);
-    // console.log("Battle Data: ", ...battleData)
     res.render(...battleData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-async function renderGamestate(p_id, playerID) {
+async function renderGamestate(locationID, playerID) {
   let html;
   let data;
-  
+  console.log("entered render game state");
+  console.log("PlayerID", playerID);
+  console.log("locationID", locationID);
+
   const { progress, captured } = await Player.findByPk(playerID, {
     //rec.session.id
     include: [{ model: Captured, where: { player_id: playerID } }],
   });
-const cap = captured.get({plain : true})
+  const cap = captured.get({ plain: true });
+  console.log("deconstructed progress, captured:", progress, ", ", cap);
 
   switch (progress) {
     case 0:
@@ -43,10 +45,10 @@ const cap = captured.get({plain : true})
       //get the current journey its associated data
       //associated data: intro description
       //associated data: wild monster array
-      const introData = await Journey.findByPk(p_id, {
+      const introData = await Journey.findByPk(locationID, {
         include: [
-          { model: Wild, where: { journey_id: p_id } },
-          { model: ShadowBeast, where: { journey_id: p_id } },
+          { model: Wild, where: { journey_id: locationID } },
+          { model: ShadowBeast, where: { journey_id: locationID } },
         ],
       });
       const { intro, wilds, shadowbeasts } = introData.get({ plain: true });
@@ -58,13 +60,15 @@ const cap = captured.get({plain : true})
       //update table attributes
       // await Journey.update(
       //   { opponent_id: wilds[opponent].id, beast_id: shadowbeasts[beast].id },
-      //   { where: { id: p_id } }
+      //   { where: { id: locationID } }
       // );
 
       console.log("Entered Case 0");
-      console.log("p_id", p_id);
+      console.log("locationID", locationID);
       console.log("opponent", opponent);
-      console.log("shadowbeat", shadowbeasts);
+      console.log("wilds: ", wilds)
+      console.log("beast: ", beast)
+      console.log("shadowbeast", shadowbeasts);
 
       html = "intro";
       data = {
@@ -76,7 +80,7 @@ const cap = captured.get({plain : true})
       break;
 
     case 1:
-      //const arenaData = await Arena.findByPk(p_id);
+      //const arenaData = await Arena.findByPk(locationID);
       //html = "arena";
       //data = arenaData.get({ plain: true });
 
@@ -87,11 +91,11 @@ const cap = captured.get({plain : true})
       console.log("Entered Case 1", data);
       break;
     case 2:
-      var { conc } = await Journey.findByPk(p_id);
+      var { conc } = await Journey.findByPk(locationID);
 
       html = "conc";
       data = { conc, cap };
-console.log(" ::::::::D....A......T........A.......data:::::::" , data)
+      console.log(" ::::::::D....A......T........A.......data:::::::", data);
       break;
     default:
   }

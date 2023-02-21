@@ -18,7 +18,7 @@ router.get("/", withAuth, async (req, res) => {
     const arenaArr = await Arena.findAll();
     const arena = arenaArr.map((arena) => arena.get({ plain: true }));
 
-    res.status(200).json(arenaArr);
+    res.status(200).json(arena);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -44,9 +44,7 @@ router.get("/:id", withAuth, async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
   console.log("FUNCTION -------- post - api/ -------------")
   try {
-    // const {  } = req.body;
-    console.log("line 46 - type: (Wild/Beast)", type)
-    const { id, type, playerID } = req.body;
+    const { type, id, playerID } = req.body;
     const opponent =
       type === "Wild"
         ? await Wild.findByPk(id)
