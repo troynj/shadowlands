@@ -9,6 +9,6 @@ document.querySelectorAll("button").forEach((btn) =>
     console.log("monsterID: ", monsterID)
     await Arena.create(type, monsterID, playerID)
     await Player.update(playerID, 1)
-    // document.location.reload();
+    document.location.reload();
   })
 );
