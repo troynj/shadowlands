@@ -1,17 +1,24 @@
-<section>
-  {{#foreach monsters as |monster|}}
-  {{>sm-avatar}}
-  {{/each}}
+<link rel="stylesheet" href="/css/sm.css">
+<section class="sm">
+  <div class="selection">
+    <section class="avatars">
+      {{#each monProto as |mp|}}
+      {{> sm-avatar}}
+      {{/each}}
+    </section>
+    <section class="stats">
+      {{monProto.base_health}}
+      {{#each monProto as |mp|}}
+      {{> sm-stats}}
+      {{/each}}
+    </section>
+  </div>
+
+  <section class="icons">
+    {{#each monProto as |mp|}}
+    {{>sm-icon}}
+    {{/each}}
+  </section>
 </section>
-</section>
-<section>
-  {{#each monsters as |monster|}}
-  {{>sm-stats}}
-  {{/each}}
-</section>
-</section>
-<section>
-  {{#each monsters as |monster|}}
-  {{>sm-icon}}
-  {{/each}}
-</section>
+
+<script src="/js/sm.js"></script>
