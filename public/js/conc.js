@@ -19,7 +19,7 @@ const playerID = parseInt(localStorage.getItem("playerID"))
     document.location.replace(`http://localhost:3001/Journey/${next}`)
   } else {
     console.error(
-      "Error updating player's stast:",
+      "Error updating player's stats:",
       response.statusText
     );
   }

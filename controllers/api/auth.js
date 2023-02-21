@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 
 router.post("/SignUp", async (req, res) => {
-  console.log("req.body", req.body)
+  // console.log("req.body", req.body)
   // const {name, password } =  req.body 
   // router.post("/", withAuth, async (req, res) => {
     try {
@@ -13,7 +13,7 @@ router.post("/SignUp", async (req, res) => {
           req.session.save(() => {
             req.session.loggedIn = true;
             req.session.userId = newUser.id
-            console.log("req.session: ", req.session)
+            // console.log("req.session: ", req.session)
             res.status(200).json(newUser);
           });
         } catch (err) {
@@ -53,6 +53,7 @@ router.put('/SignIn', async (req, res) => {
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.loggedIn = true;
+      req.session.playerID = undefined
       
       res.json({ user: userData, message: 'You are now logged in!' });
     });

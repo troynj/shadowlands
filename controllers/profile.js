@@ -22,7 +22,8 @@ router.get("/:id", withAuth, async (req, res) => {
       ],
     });
     const account = user.get({ plain: true });
-    console.log(account);
+    console.log("user: ", account);
+    console.log({ account, userID : req.session.userId })
     res.render("profile", account);
   } catch (err) {
     res.status(500).json(err);
