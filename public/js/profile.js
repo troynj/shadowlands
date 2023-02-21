@@ -1,4 +1,5 @@
 document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", async function (event) {
+document.querySelectorAll(".action").forEach(el => {el.addEventListener("click", async function (event) {
   const player_id = event.target.getAttribute("player")
   const type = event.target.textContent
   if (type === "New Game") {
@@ -11,7 +12,8 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
     document.querySelector("#create").addEventListener("click", function() {
       const playerIdEl = document.querySelector("h1").getAttribute('id') 
       const userInput = document.querySelector('input[id="player-name"]') 
-      if (userInput.value) {Player.create(playerIdEl, userInput.value)
+      const userId = document.querySelector("h1").getAttribute("id")
+      if (userInput.value) {Player.create(userId, userInput.value)
       document.location.reload()
     }
     else {
@@ -25,6 +27,9 @@ else if(type === "Load") {
   const playerID = event.target.getAttribute("player")
   const journeyID = event.target.getAttribute("journey")
   localStorage.setItem("playerID", playerID)
+  console.log(playerID)
+  await Player.update(playerID, 0)
+  await Load.update(playerID)
   await Load.update(playerID)
   await Player.update(playerID, 0)
   document.location.replace(`../Journey/${journeyID}`)

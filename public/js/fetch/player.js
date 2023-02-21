@@ -20,13 +20,12 @@ getOne: async function (id) {
         name: name,
         progress: 0,
         journey_id: 1,
-        user_id: 1
+        user_id: userID,
       }),
     });
 
     if (response.ok) {
       const data = await response.json();
-      this.id = data.id;
       console.log("Player added successfully:", data);
     } else {
       console.error("Error adding Player:", response.statusText);
