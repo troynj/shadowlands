@@ -20,15 +20,15 @@ router.get("/:id", withAuth, async (req, res) => {
     const { playerID } = req.session
     console.log("ID: ", id)
     console.log("playerID: ", playerID)
-    const battleData = await renderGamestate(id, playerID);
-   battleData.sess = req.session
+    const battleData = await renderGamestate(req, id, playerID);
+   console.log("HERE", ...battleData)
     res.render(...battleData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-async function renderGamestate(locationID, playerID) {
+async function renderGamestate(req, locationID, playerID) {
 
   let html;
   let data;
@@ -70,6 +70,7 @@ async function renderGamestate(locationID, playerID) {
 
       html = "intro";
       data = {
+        sess: req.session,
         intro,
         wild_id: wilds[opponent].id,
         beast_id: shadowbeasts[beast].id,
@@ -84,7 +85,9 @@ async function renderGamestate(locationID, playerID) {
 
       const arenaArr = await Arena.findAll();
       html = "arena";
-      data = arenaArr[arenaArr.length - 1].get({ plain: true });
+      data = { sess: req.session,
+      data: arenaArr[arenaArr.length - 1].get({ plain: true })
+      }
 
       console.log("Entered Case 1", data);
       break;
@@ -92,7 +95,7 @@ async function renderGamestate(locationID, playerID) {
       var { conc } = await Journey.findByPk(locationID);
 
       html = "conc";
-      data = { conc, cap };
+      data = { conc, cap, sess: req.session };
       console.log(" ::::::::D....A......T........A.......data:::::::", data);
       break;
     default:

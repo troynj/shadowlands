@@ -31,12 +31,12 @@ function displaySelection(event) {
   }
 }
 
-function selectMonster(event) {
+async function selectMonster(event) {
   const playerID = parseInt(localStorage.getItem("playerID"))
   const monsterID = parseInt(event.target.id)
 
   console.log("PlayerID : ", playerID)
   console.log("monsterID", monsterID)
-  Captured.create( playerID, monsterID)
+  await Captured.create( playerID, monsterID)
   window.location.replace("../Journey/1")
 }
