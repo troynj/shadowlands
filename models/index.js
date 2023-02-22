@@ -3,7 +3,7 @@ const Captured = require("./Captured");
 const Journey = require("./Jorney");
 const Player = require("./Player");
 const Prototype = require("./Prototype");
-const ShadowBeast = require("./ShadowBeast");
+const ShadowBeast = require("./Shadowbeast");
 const User = require("./User");
 const Wild = require("./Wild");
 
