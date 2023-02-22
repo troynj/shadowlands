@@ -1,5 +1,5 @@
 
-<h2 id = "{{account.id}}">{{account.name}}</h2>
+<h2 id = "{{account.id}}">{{account.name}}'s Dashboard</h2>
 <button class="action">New Game</button>
 <section class="dash">
   <table class="saved-games">
@@ -15,6 +15,8 @@
 {{/each}}
   </table>
 </section>
+  <p>* Note: Upon loading game, progress metric is reset - despite what is recorded</p>
+  <p>(current level will persist but you start from the beginning)</p>
 
 <section class="hide" id="backdrop">
   <section id="modal">

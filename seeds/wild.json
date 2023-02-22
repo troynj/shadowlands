@@ -6,13 +6,13 @@
 },
 {
   "attack": 40,
-  "health": 251,
+  "health": 151,
   "journey_id": 1,
   "prototype_id": 2
 },
 {
   "attack": 42,
-  "health": 217,
+  "health": 187,
   "journey_id": 1,
   "prototype_id": 3
 },

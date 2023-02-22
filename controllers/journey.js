@@ -21,7 +21,7 @@ router.get("/:id", withAuth, async (req, res) => {
     console.log("ID: ", id)
     console.log("playerID: ", playerID)
     const battleData = await renderGamestate(id, playerID);
-    // console.log("Battle Data: ", ...battleData)
+   battleData.sess = req.session
     res.render(...battleData);
   } catch (err) {
     res.status(500).json(err);
