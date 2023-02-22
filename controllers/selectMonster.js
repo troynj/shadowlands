@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
     const monProto = monsterDataExt.map(el =>  el.get({plain :true}))
     // console.log("monsterDataExt", monsterDataExt)
     console.log("monProto", monProto)
-    res.render("selectMonster", { monProto })
+    res.render("selectMonster", { monProto, sess : req.session })
   }
   catch(err){}
 })

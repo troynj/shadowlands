@@ -20,9 +20,9 @@
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/Dashboard/1">Dashboard</a></li>
       <li><a href="/About">About</a></li>
-      {{#if loggedIn}}
+      {{#if sess.loggedIn}}
+      <li><a href="/Dashboard/{{sess.userId}}">Dashboard</a></li>
         <li><a href="/Auth/SignOut" id="signout" class="btn-no-style">Sign Out</a></li>
       {{else}}
         <li><a href="/Auth/SignIn">Sign In</a></li>

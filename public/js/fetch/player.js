@@ -27,6 +27,7 @@ getOne: async function (id) {
     if (response.ok) {
       const data = await response.json();
       console.log("Player added successfully:", data);
+      return data.id
     } else {
       console.error("Error adding Player:", response.statusText);
     }
@@ -45,7 +46,7 @@ getOne: async function (id) {
       const data = await response.json();
       console.log("Player progress update successful:", data);
     } else {
-      console.error("Error updating comment:", response.statusText);
+      console.error("Error updating player progress:", response.statusText);
     }
   },
 

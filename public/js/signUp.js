@@ -13,8 +13,10 @@ async function submitCredentials(event) {
   console.log("confirm", confirm);
 
   if (name && email && password && password === confirm) {
-await Auth.SignUp({name, email, password});
-  }
+const userID = await Auth.SignUp({name, email, password});
 
-  //  document.location.replace('/');
+document.location.replace(`/Dashboard/${userID}`);
+  
+  
+  }
 };

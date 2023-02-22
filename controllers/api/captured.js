@@ -36,7 +36,9 @@ router.get("/:id", withAuth, async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
   try {
-    const newCaptured = await Captured.create(req.body);
+    const {playerID: player_id, protoID: prototype_id} = req.body
+    const { base_attack: attack, base_health:health } = await Prototype.findByPk(prototype_id)
+    const newCaptured = await Captured.create({attack, health, player_id, prototype_id});
     res.status(200).json(newCaptured);
   } catch (err) {
     res.status(400).json(err);

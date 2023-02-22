@@ -8,12 +8,15 @@ document.querySelectorAll(".action").forEach(el => {el.addEventListener("click",
     backdropEl.classList.remove('hide');
   document.querySelector("#close").addEventListener("click", function() {backdropEl.classList.add('hide');
     backdropEl.classList.remove('show');})
-    document.querySelector("#create").addEventListener("click", function() {
-      const playerIdEl = document.querySelector("h1").getAttribute('id') 
+    document.querySelector("#create").addEventListener("click", async function() {
       const userInput = document.querySelector('input[id="player-name"]') 
-      const userId = document.querySelector("h1").getAttribute("id")
-      if (userInput.value) {Player.create(userId, userInput.value)
-      document.location.reload()
+      const userId = document.querySelector('h2[id]').getAttribute("id")
+      // console.log(userId)
+      if (userInput.value) {const playerID = await Player.create(userId, userInput.value)
+        localStorage.setItem("playerID", playerID)
+        await Load.update(playerID)
+        // document.location.reload()
+      document.location.replace("../../SelectMonster")
     }
     else {
       userInput.style = "outline: 2px solid red;"

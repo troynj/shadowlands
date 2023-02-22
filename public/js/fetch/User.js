@@ -30,7 +30,7 @@ const User = {
       const data = await response.json();
       console.log("User progress update successful:", data);
     } else {
-      console.error("Error updating comment:", response.statusText);
+      console.error("Error updating player progress:", response.statusText);
     }
   },
 

@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 router.get('/SignIn', (req, res) => {
   // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
@@ -12,7 +12,7 @@ router.get('/SignIn', (req, res) => {
 
 router.get('/SignUp', (req, res) => {
   // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }

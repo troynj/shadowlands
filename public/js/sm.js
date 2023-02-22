@@ -30,3 +30,13 @@ function displaySelection(event) {
     this.removeEventListener("mouseleave", hideSelection);
   }
 }
+
+function selectMonster(event) {
+  const playerID = parseInt(localStorage.getItem("playerID"))
+  const monsterID = parseInt(event.target.id)
+
+  console.log("PlayerID : ", playerID)
+  console.log("monsterID", monsterID)
+  Captured.create( playerID, monsterID)
+  window.location.replace("../Journey/1")
+}

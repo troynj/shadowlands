@@ -1,5 +1,5 @@
 
-<h1 id = "{{id}}">{{name}}</h1>
+<h2 id = "{{account.id}}">{{account.name}}</h2>
 <button class="action">New Game</button>
 <section class="dash">
   <table class="saved-games">
@@ -10,7 +10,7 @@
       <th>Save Date</th>
       <th>Actions</th>
     </tr>
-{{#each players as |player|}}
+{{#each account.players as |player|}}
 {{>dashboard-game}}
 {{/each}}
   </table>

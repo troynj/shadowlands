@@ -14,6 +14,7 @@ const Auth = {
     if (response.ok) {
       const data = await response.json();
       console.log("User added successfully:", data);
+      return data.id
     } else {
       console.error("Error adding User:", response.statusText);
     }
